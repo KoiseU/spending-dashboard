@@ -1,0 +1,68 @@
+<script>
+  const log = (m) => {
+    const div = document.getElementById('log');
+    div.textContent += m + "\n";
+    console.log(m);
+  };
+
+  async function getLinkToken() {
+    const res = await fetch('/create_link_token', { method: 'POST' });
+    const body = await res.json();
+    return body.link_token;
+  }
+
+  async function openLink() {
+    const linkToken = await getLinkToken();
+
+    // Only set receivedRedirectUri if we're on the OAuth return with oauth_state_id
+    const qs = new URLSearchParams(window.location.search);
+    const cfg = {
+      token: linkToken,
+      onSuccess: async (public_token, metadata) => {
+        log("✔ Success! Exchanging public_token...");
+        try {
+          const resp = await fetch('/exchange_public_token', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ public_token, metadata })
+          });
+          const j = await resp.json();
+          if (j.ok) log("Linked item_id: " + j.item_id);
+          else log("Exchange failed");
+        } catch (e) {
+          log("Token exchange failed: " + e.message);
+        }
+      },
+      onEvent: async (eventName, metadata) => {
+        try {
+          await fetch('/link/event', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ eventName, metadata })
+          });
+        } catch (e) {}
+        log("Plaid Event: " + eventName);
+      },
+      onExit: async (err, metadata) => {
+        try {
+          await fetch('/link/exit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ error: err, metadata })
+          });
+        } catch (e) {}
+        if (err) log("❌ Exit error: " + err.error_message);
+        else log("Exited Plaid Link.");
+      }
+    };
+
+    if (qs.has('oauth_state_id')) {
+      cfg.receivedRedirectUri = window.location.href;
+    }
+
+    const handler = Plaid.create(cfg);
+    handler.open();
+  }
+
+  document.getElementById('btn').addEventListener('click', openLink);
+</script>
