@@ -14,8 +14,9 @@ permissions:
 jobs:
   pull:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -23,20 +24,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install plaid-python python-dateutil python-dotenv
+          pip install papermill plaid-python python-dateutil python-dotenv
 
-      - name: Run pull notebook
+      - name: Run pull notebook (headless)
         env:
           PLAID_ENV: production
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
           PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
           PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
         run: |
-          pip install nbconvert jupyter 
-          jupyter notebook --to notebook --execute scripts/pull_transactions.ipynb --output executed_pull_transactions.ipynb
+          papermill scripts/pull_transactions.ipynb executed_pull_transactions.ipynb -k python3
 
       - name: Commit & push if changed
         run: |
@@ -48,4 +48,3 @@ jobs:
             git push
           else
             echo "No changes to commit."
-          fi
