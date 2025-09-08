@@ -28,14 +28,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install plaid-python python-dateutil python-dotenv
 
-      - name: Run pull script
+      - name: Run pull notebook
         env:
           PLAID_ENV: production
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
           PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
           PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
         run: |
-          python scripts/pull_transactions.py
+          pip install nbconvert jupyter 
+          jupyter notebook --to notebook --execute scripts/pull_transactions.ipynb --output executed_pull_transactions.ipynb
 
       - name: Commit & push if changed
         run: |
