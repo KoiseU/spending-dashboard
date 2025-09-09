@@ -3,7 +3,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: "29 */6 * * *"
+    - cron: "29 */6 * * *"   # every 6 hours at :29
 
 permissions:
   contents: write
@@ -182,6 +182,6 @@ jobs:
             echo "No changes, but FORCE_COMMIT=true -> pushing empty commit."
             git commit --allow-empty -m "Refresh dataset tick [skip ci]"
             git push
-          else
+          else:
             echo "No changes to commit."
           fi
