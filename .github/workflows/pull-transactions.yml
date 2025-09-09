@@ -54,14 +54,14 @@ jobs:
       - name: Create runtime state (tokens/cursor)
         run: |
           mkdir -p .state
-          printf '%s' "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
+          printf '%s' "${{ env.PLAID_ACCESS_TOKENS }}" > .state/access_tokens.json
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
           echo "---- tokens file head ----"
           head -c 200 .state/access_tokens.json || true
           echo
-          echo "PLAID_ENV=${PLAID_ENV}"
-          echo "OUTPUT_DIR=${OUTPUT_DIR}"
-          echo "DAYS_BACK=${DAYS_BACK}"
+          echo "PLAID_ENV=${{ env.PLAID_ENV }}"
+          echo "OUTPUT_DIR=${{ env.OUTPUT_DIR }}"
+          echo "DAYS_BACK=${{ env.DAYS_BACK }}"
 
       - name: Preflight: validate tokens with Plaid Item/Get
         env:
