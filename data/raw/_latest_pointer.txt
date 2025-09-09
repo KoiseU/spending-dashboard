@@ -1,2 +1,2 @@
 data/raw/discover_credit_ytd.csv
-2025-09-09T03:08:16Z
+2025-09-09T03:18:36Z
