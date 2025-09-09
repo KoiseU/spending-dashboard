@@ -1,48 +1,86 @@
-name: Pull Plaid Transactions
+name: Pull Transactions (Plaid → CSV → latest.csv)
 
 on:
-  workflow_dispatch: {}   # allow manual runs
+  workflow_dispatch: {}
   schedule:
-    # Weekly: Mondays 11:00 UTC (04:00 Pacific)
-    - cron: "0 11 * * 1"
-    # Monthly: 1st of month 11:05 UTC
-    - cron: "5 11 1 * *"
+    # Every 6 hours (UTC). Adjust as desired.
+    - cron: "15 */6 * * *"
 
 permissions:
   contents: write
 
 jobs:
   pull:
+    name: pull
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Run pull notebook (headless with papermill)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install papermill ipykernel pandas==2.* pyarrow==17.* python-dotenv plaid-python
+
+      - name: Register kernel for papermill
+        run: |
+          python -m ipykernel install --user --name python3 --display-name "Python 3"
+
+      - name: Export required env (Plaid prod)
         env:
-          PLAID_ENV: production
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
           PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
           PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
         run: |
-          python -m pip install --upgrade pip
-          pip install papermill ipykernel plaid-python python-dateutil python-dotenv
-          python -m ipykernel install --user --name python3 --display-name "Python 3"
-          papermill scripts/pull_transactions.ipynb executed_pull_transactions.ipynb -k python3
+          test -n "$PLAID_CLIENT_ID" || (echo "PLAID_CLIENT_ID missing" && exit 1)
+          test -n "$PLAID_SECRET"    || (echo "PLAID_SECRET missing" && exit 1)
+          test -n "$PLAID_ACCESS_TOKENS" || (echo "PLAID_ACCESS_TOKENS missing" && exit 1)
+          echo "PLAID_ENV=production" >> $GITHUB_ENV
 
-      - name: Commit & push if changed
+      - name: Run enrich notebook headlessly
+        run: |
+          # Executes your notebook; change the path if your notebook lives elsewhere
+          papermill scripts/pull_transactions.ipynb /tmp/pull_out.ipynb -k python3
+
+      - name: Ensure output & stable pointer (latest.csv)
+        shell: bash
+        run: |
+          set -e
+          mkdir -p data/raw
+
+          # Find newest CSV written this run
+          NEWEST="$(ls -1tr data/raw/*.csv 2>/dev/null | tail -n 1 || true)"
+
+          if [ -z "$NEWEST" ]; then
+            echo "No CSVs found in data/raw. Check notebook write path." >&2
+          else
+            cp -f "$NEWEST" data/raw/latest.csv
+          fi
+
+          # Force a commit by updating a pointer log with timestamp
+          { echo "${NEWEST:-none}"; date -u +"%Y-%m-%dT%H:%M:%SZ"; } > data/raw/_latest_pointer.txt
+
+          echo "Listing CSVs in data/raw:"
+          ls -lah data/raw || true
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw/*.csv data/raw/_latest_pointer.txt || true
           if ! git diff --cached --quiet; then
-            git commit -m "chore: plaid pull $(date -u +%F)"
-            git push
+            git commit -m "chore: update raw csv + latest pointer [skip ci]"
+            git push origin HEAD:main
           else
-            echo "No changes to commit."
+            echo "Nothing to commit"
           fi
