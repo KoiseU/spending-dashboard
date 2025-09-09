@@ -1,0 +1,3 @@
+account_id,transaction_id,authorized_date,date,name,merchant_name,amount,iso_currency_code,pending,payment_channel,category,category_id
+wrJyLQqMX7TpyAXwRMKrimXrogEnMDiRzbxxm,Pk8ogy3JrxtMebqmOAE9fqAYO7ZaxXiaEnOOv,,2025-09-08,Withdrawal AMEX EPAYMENT / TYPE: ACH PMT ID: 0005000008 DATA: ER AM CO: AMEX EPAYMENT NAME: KOSISONNA UGOCHUKWU %% ACH ECC WEB %% ACH Trace 091000011489512,,777.78,USD,False,other,,
+wrJyLQqMX7TpyAXwRMKrimXrogEnMDiRzbxxm,6xnVwvbJYETqXgOk93x7uJb07JzjPrFV8mbKa,,2025-09-08,"Deposit Kiosk / WEALTHFRONT BROKERAGE LLC/WELLS FARGO BANK, NA/c1d31e5cf13740a1a7f434a251cbcfcd",Wealthfront,-500.0,USD,False,other,,
