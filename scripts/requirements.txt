@@ -1,4 +1,0 @@
-Flask==3.0.3
-python-dotenv==1.0.1
-plaid-python==8.13.0
-gunicorn==21.2.0

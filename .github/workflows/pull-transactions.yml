@@ -1,71 +1,66 @@
-name: Pull Transactions 
+name: Build latest.csv
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    - cron: "15 */6 * * *"   # every 6 hours (UTC)
+    - cron: "29 */6 * * *"   # every 6 hours at :29
 
 permissions:
   contents: write
 
+concurrency:
+  group: build-latest
+  cancel-in-progress: false
+
 jobs:
-  pull:
-    name: pull
+  run:
     runs-on: ubuntu-latest
+    env:
+      PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
+      PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
+      PLAID_ENV: ${{ secrets.PLAID_ENV }}
+      PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
+      OUTPUT_DIR: data/raw
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install papermill ipykernel pandas==2.* pyarrow==17.* python-dotenv plaid-python
+          pip install -r requirements.txt
+          # Ensure papermill + ipykernel present to execute notebooks
+          pip install papermill ipykernel
 
-      - name: Register kernel for papermill
+      - name: Create runtime state (tokens/cursor)
         run: |
-          python -m ipykernel install --user --name python3 --display-name "Python 3"
+          mkdir -p .state
+          # Write PLAID_ACCESS_TOKENS JSON into .state/access_tokens.json
+          echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
+          # Ensure cursors file exists
+          if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
-      - name: Run pull notebook headlessly
-        env:
-          PLAID_ENV: production
-          PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
-          PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
-          PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
+      - name: Execute notebook -> latest.csv
         run: |
-          papermill scripts/pull_transactions.ipynb /tmp/pull_out.ipynb -k python3
+          # Execute scripts/build_latest.ipynb in-place
+          papermill \
+            scripts/build_latest.ipynb \
+            scripts/build_latest.ipynb
 
-      - name: Ensure output & stable pointer (latest.csv)
-        shell: bash
-        run: |
-          set -e
-          mkdir -p data/raw
-          NEWEST="$(ls -1tr data/raw/*.csv 2>/dev/null | tail -n 1 || true)"
-          if [ -z "$NEWEST" ]; then
-            echo "No CSVs found in data/raw. Check notebook write path." >&2
-          else
-            cp -f "$NEWEST" data/raw/latest.csv
-          fi
-          { echo "${NEWEST:-none}"; date -u +"%Y-%m-%dT%H:%M:%SZ"; } > data/raw/_latest_pointer.txt
-          echo "Listing CSVs in data/raw:"; ls -lah data/raw || true
-
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit latest.csv (if changed)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/*.csv data/raw/_latest_pointer.txt || true
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: update raw csv + latest pointer [skip ci]"
-            git push origin HEAD:main
+          git add data/raw/latest.csv
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update latest.csv [skip ci]"
+            git push
           else
-            echo "Nothing to commit"
+            echo "No changes to commit."
           fi

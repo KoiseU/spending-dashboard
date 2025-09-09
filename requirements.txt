@@ -1,0 +1,5 @@
+pandas
+plaid-python
+jupyter
+python-dotenv
+requests

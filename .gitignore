@@ -1,0 +1,21 @@
+# --- secrets & env ---
+.env
+scripts/.env
+.state/*
+!.state/.gitkeep
+
+# --- data outputs ---
+data/raw/*
+!data/raw/latest.csv
+!data/raw/.gitkeep
+
+# --- notebooks ---
+**/.ipynb_checkpoints/
+
+# --- python build artifacts ---
+__pycache__/
+*.pyc
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
