@@ -21,10 +21,28 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
+      DAYS_BACK: "90"             # adjust if you want a longer window
+      FORCE_COMMIT: "false"       # set to "true" to force a commit even if file unchanged
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history for reliable diffs
+
+      # 🔎 Repo sanity: confirm we're on main and paths exist
+      - name: Repo state (pwd, branch, tree)
+        run: |
+          echo "CWD=$(pwd)"
+          echo "BRANCH=$(git rev-parse --abbrev-ref HEAD)"
+          echo "HEAD=$(git rev-parse HEAD)"
+          ls -la
+          echo "---- workflows ----"
+          ls -la .github/workflows || true
+          echo "---- scripts ----"
+          ls -la scripts || true
+          echo "---- data/raw ----"
+          ls -la data/raw || true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -35,31 +53,143 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # Ensure papermill + ipykernel present to execute notebooks
           pip install papermill ipykernel
 
       - name: Create runtime state (tokens/cursor)
         run: |
           mkdir -p .state
-          # Write PLAID_ACCESS_TOKENS JSON into .state/access_tokens.json
-          echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
+          # Write PLAID_ACCESS_TOKENS exactly as provided (avoid shell mangling)
+          printf '%s' "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
           # Ensure cursors file exists
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
+          echo "---- tokens file head ----"
+          head -c 200 .state/access_tokens.json || true
+          echo
+          echo "PLAID_ENV=${PLAID_ENV}"
+          echo "OUTPUT_DIR=${OUTPUT_DIR}"
+          echo "DAYS_BACK=${DAYS_BACK}"
+
+      # ✅ Preflight Plaid token validation (issuer-by-issuer)
+      - name: Preflight: validate tokens with Plaid Item/Get
+        env:
+          PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
+          PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
+          PLAID_ENV: ${{ secrets.PLAID_ENV }}
+        run: |
+          python - <<'PY'
+          import os, json, sys
+          from pathlib import Path
+
+          TOKENS_PATH = Path(".state/access_tokens.json")
+          PLAID_ENV = (os.getenv("PLAID_ENV","production") or "production").lower()
+          print(f"ENV: {PLAID_ENV}")
+          print(f"TOKENS_PATH: {TOKENS_PATH.resolve()}")
+
+          raw = TOKENS_PATH.read_text()
+          print("JSON length:", len(raw))
+          try:
+            tokens = json.loads(raw)
+          except Exception as e:
+            print("JSON parse error:", e)
+            print("Head of file:", raw[:200])
+            sys.exit(2)
+
+          def m(s):
+            s = str(s or "")
+            return (s[:6] + "…" + s[-4:]) if len(s) > 12 else "***"
+
+          # Initialize Plaid client (v10 first, fallback to legacy)
+          USE_V10 = False
+          client = None
+          try:
+            from plaid.api import plaid_api
+            from plaid.configuration import Configuration, Environment
+            envmap = {"production":Environment.Production, "development":Environment.Development, "sandbox":Environment.Sandbox}
+            config = Configuration(host=envmap[PLAID_ENV])
+            from plaid.api_client import ApiClient
+            config.api_key["clientId"] = os.getenv("PLAID_CLIENT_ID")
+            config.api_key["secret"]   = os.getenv("PLAID_SECRET")
+            api_client = ApiClient(config)
+            client = plaid_api.PlaidApi(api_client)
+            USE_V10 = True
+            print("Plaid SDK: v10")
+          except Exception as e:
+            try:
+              from plaid import Client as LegacyClient
+              client = LegacyClient(
+                client_id=os.getenv("PLAID_CLIENT_ID"),
+                secret=os.getenv("PLAID_SECRET"),
+                environment=PLAID_ENV
+              )
+              print("Plaid SDK: legacy")
+            except Exception as ee:
+              print("Plaid client init failed:", e, ee)
+              sys.exit(3)
+
+          errs = []
+          if USE_V10:
+            from plaid.model.item_get_request import ItemGetRequest
+          for issuer, tok in tokens.items():
+            t = str(tok or "").strip().strip('"').strip("'")
+            print(f"Validate {issuer}: startswith('access-')={t.startswith('access-')} env-hint={(t.split('-',2)[1] if t.startswith('access-') and len(t.split('-',2))>=3 else 'n/a')} token={m(t)}")
+            try:
+              if USE_V10:
+                req = ItemGetRequest(access_token=t)
+                client.item_get(req)
+              else:
+                client.Item.get(t)
+              print("  -> OK")
+            except Exception as e:
+              body = getattr(e, "body", None)
+              msg = str(e) + (f" | body={body[:280]}" if isinstance(body, (bytes,str)) and body else "")
+              print("  -> FAIL:", msg)
+              errs.append((issuer, msg))
+
+          if errs:
+            print("Token validation failures:", errs)
+            sys.exit(4)
+          PY
+
+      # Make sure the notebook path we expect actually exists
+      - name: Verify notebook path
+        run: |
+          test -f scripts/build_latest.ipynb && echo "Notebook exists." || (echo "Notebook MISSING!" && exit 2)
 
       - name: Execute notebook -> latest.csv
+        env:
+          OUTPUT_DIR: data/raw
+          DAYS_BACK: ${{ env.DAYS_BACK }}
         run: |
-          # Execute scripts/build_latest.ipynb in-place
-          papermill \
-            scripts/build_latest.ipynb \
-            scripts/build_latest.ipynb
+          papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
 
-      - name: Commit latest.csv (if changed)
+      - name: Show output details
+        run: |
+          if [ -f data/raw/latest.csv ]; then
+            echo "latest.csv exists:"
+            wc -l data/raw/latest.csv
+            sha256sum data/raw/latest.csv
+            head -n 5 data/raw/latest.csv
+          else
+            echo "latest.csv missing!" && exit 3
+          fi
+
+      - name: Commit latest.csv (if changed or FORCE_COMMIT)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/raw/latest.csv
+          CHANGED=0
           if ! git diff --staged --quiet; then
+            CHANGED=1
+          fi
+
+          if [ "$CHANGED" = "1" ]; then
+            echo "Changes detected; committing."
             git commit -m "Auto-update latest.csv [skip ci]"
+            git push
+          elif [ "${FORCE_COMMIT}" = "true" ]; then
+            echo "No changes, but FORCE_COMMIT=true -> pushing empty commit."
+            git commit --allow-empty -m "Refresh dataset tick [skip ci]"
             git push
           else
             echo "No changes to commit."
