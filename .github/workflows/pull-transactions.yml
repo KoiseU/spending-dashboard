@@ -1,10 +1,9 @@
-name: Pull Transactions (Plaid → CSV → latest.csv)
+name: Pull Transactions 
 
 on:
   workflow_dispatch: {}
   schedule:
-    # Every 6 hours (UTC). Adjust as desired.
-    - cron: "15 */6 * * *"
+    - cron: "15 */6 * * *"   # every 6 hours (UTC)
 
 permissions:
   contents: write
@@ -34,20 +33,13 @@ jobs:
         run: |
           python -m ipykernel install --user --name python3 --display-name "Python 3"
 
-      - name: Export required env (Plaid prod)
+      - name: Run pull notebook headlessly
         env:
+          PLAID_ENV: production
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
           PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
           PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
         run: |
-          test -n "$PLAID_CLIENT_ID" || (echo "PLAID_CLIENT_ID missing" && exit 1)
-          test -n "$PLAID_SECRET"    || (echo "PLAID_SECRET missing" && exit 1)
-          test -n "$PLAID_ACCESS_TOKENS" || (echo "PLAID_ACCESS_TOKENS missing" && exit 1)
-          echo "PLAID_ENV=production" >> $GITHUB_ENV
-
-      - name: Run enrich notebook headlessly
-        run: |
-          # Executes your notebook; change the path if your notebook lives elsewhere
           papermill scripts/pull_transactions.ipynb /tmp/pull_out.ipynb -k python3
 
       - name: Ensure output & stable pointer (latest.csv)
@@ -55,21 +47,14 @@ jobs:
         run: |
           set -e
           mkdir -p data/raw
-
-          # Find newest CSV written this run
           NEWEST="$(ls -1tr data/raw/*.csv 2>/dev/null | tail -n 1 || true)"
-
           if [ -z "$NEWEST" ]; then
             echo "No CSVs found in data/raw. Check notebook write path." >&2
           else
             cp -f "$NEWEST" data/raw/latest.csv
           fi
-
-          # Force a commit by updating a pointer log with timestamp
           { echo "${NEWEST:-none}"; date -u +"%Y-%m-%dT%H:%M:%SZ"; } > data/raw/_latest_pointer.txt
-
-          echo "Listing CSVs in data/raw:"
-          ls -lah data/raw || true
+          echo "Listing CSVs in data/raw:"; ls -lah data/raw || true
 
       - name: Commit and push changes
         env:
