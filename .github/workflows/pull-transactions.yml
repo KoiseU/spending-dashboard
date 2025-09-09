@@ -1,9 +1,9 @@
-name: Build latest.csv
+﻿name: Build latest.csv
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "29 */6 * * *"   # every 6 hours at :29
+    - cron: "29 */6 * * *"
 
 permissions:
   contents: write
@@ -21,28 +21,24 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-      DAYS_BACK: "90"             # adjust if you want a longer window
-      FORCE_COMMIT: "false"       # set to "true" to force a commit even if file unchanged
+      DAYS_BACK: "90"
+      FORCE_COMMIT: "false"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # full history for reliable diffs
+          fetch-depth: 0
 
-      # 🔎 Repo sanity: confirm we're on main and paths exist
       - name: Repo state (pwd, branch, tree)
         run: |
           echo "CWD=$(pwd)"
           echo "BRANCH=$(git rev-parse --abbrev-ref HEAD)"
           echo "HEAD=$(git rev-parse HEAD)"
           ls -la
-          echo "---- workflows ----"
-          ls -la .github/workflows || true
-          echo "---- scripts ----"
-          ls -la scripts || true
-          echo "---- data/raw ----"
-          ls -la data/raw || true
+          echo "---- workflows ----"; ls -la .github/workflows || true
+          echo "---- scripts ----";   ls -la scripts || true
+          echo "---- data/raw ----";  ls -la data/raw || true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -58,9 +54,7 @@ jobs:
       - name: Create runtime state (tokens/cursor)
         run: |
           mkdir -p .state
-          # Write PLAID_ACCESS_TOKENS exactly as provided (avoid shell mangling)
           printf '%s' "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
-          # Ensure cursors file exists
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
           echo "---- tokens file head ----"
           head -c 200 .state/access_tokens.json || true
@@ -69,7 +63,6 @@ jobs:
           echo "OUTPUT_DIR=${OUTPUT_DIR}"
           echo "DAYS_BACK=${DAYS_BACK}"
 
-      # ✅ Preflight Plaid token validation (issuer-by-issuer)
       - name: Preflight: validate tokens with Plaid Item/Get
         env:
           PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
@@ -98,7 +91,6 @@ jobs:
             s = str(s or "")
             return (s[:6] + "…" + s[-4:]) if len(s) > 12 else "***"
 
-          # Initialize Plaid client (v10 first, fallback to legacy)
           USE_V10 = False
           client = None
           try:
@@ -150,7 +142,6 @@ jobs:
             sys.exit(4)
           PY
 
-      # Make sure the notebook path we expect actually exists
       - name: Verify notebook path
         run: |
           test -f scripts/build_latest.ipynb && echo "Notebook exists." || (echo "Notebook MISSING!" && exit 2)
