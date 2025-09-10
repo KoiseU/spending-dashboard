@@ -82,9 +82,20 @@ jobs:
 
       - name: Commit outputs if changed
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/latest.csv config/merchants_dim.csv
+
+          # Always add latest.csv (we already verified it exists earlier)
+          git add data/raw/latest.csv
+
+          # Add merchants_dim.csv only if it exists
+          if [ -f config/merchants_dim.csv ]; then
+            git add config/merchants_dim.csv
+          else
+            echo "No merchants_dim.csv to add (AI mapping may have been skipped)."
+          fi
+
           if ! git diff --staged --quiet; then
             git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
             git push
