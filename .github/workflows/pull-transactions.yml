@@ -64,22 +64,20 @@ jobs:
           echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
-      - name: Run build notebook (writes data/raw/latest.csv)
+      - name: Run build notebook
         working-directory: ${{ github.workspace }}
         run: |
-          echo "CWD (build) = $(pwd)"
           papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
           echo "After build, listing data/raw:"
           ls -la "$GITHUB_WORKSPACE/data/raw" || true
+          test -f "$GITHUB_WORKSPACE/data/raw/latest.csv" || (echo "latest.csv missing after build"; exit 1)
 
-      - name: Run enrich notebook (reads exact latest.csv path)
+      - name: Run enrich notebook (pin absolute CSV path, but resolver will also find it)
         working-directory: ${{ github.workspace }}
         env:
           LATEST_CSV_ABS: ${{ github.workspace }}/data/raw/latest.csv
         run: |
-          echo "CWD (enrich) = $(pwd)"
           echo "LATEST_CSV_ABS=$LATEST_CSV_ABS"
-          test -f "$LATEST_CSV_ABS" && echo "latest.csv present" || (echo "latest.csv missing"; ls -la "$GITHUB_WORKSPACE/data/raw" || true)
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
       - name: Commit outputs if changed
