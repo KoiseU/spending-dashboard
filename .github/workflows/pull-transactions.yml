@@ -39,11 +39,27 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install deps (sanitize requirements)
         run: |
+          set -eux
+          echo "---- requirements.txt (pre-sanitize) ----"
+          cat requirements.txt || true
+          # Remove any accidental azure-ai-openai lines to avoid 404
+          sed -i '/^[[:space:]]*azure-ai-openai[[:space:]]*$/d' requirements.txt || true
+          echo "---- requirements.txt (post-sanitize) ----"
+          cat requirements.txt
+
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install papermill ipykernel
+
+      - name: Debug: show repo tree & top files
+        run: |
+          set -eux
+          ls -la
+          git rev-parse HEAD
+          echo "---- show requirements from repo ----"
+          cat requirements.txt
 
       - name: Create runtime state (tokens/cursor)
         run: |
