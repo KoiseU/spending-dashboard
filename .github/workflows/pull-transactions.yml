@@ -2,31 +2,20 @@
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "29 */6 * * *"  # every 6 hours at :29 (optional, keep or remove)
 
 permissions:
   contents: write
 
-concurrency:
-  group: build-latest
-  cancel-in-progress: false
-
 jobs:
   run:
     runs-on: ubuntu-latest
-
     env:
-      # Plaid
       PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
       PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
-
-      # Output dir used by both notebooks (relative to repo root)
       OUTPUT_DIR: data/raw
-
-      # Azure OpenAI (optional; AI steps no-op if unset)
+      # Azure keys optional; AI cells no-op if unset
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
@@ -37,24 +26,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Debug: workspace & tree
-        run: |
-          echo "WS=$GITHUB_WORKSPACE"
-          pwd
-          ls -la
-          git rev-parse HEAD
-
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          # Sanitize just in case; harmless if not present
-          if [ -f requirements.txt ]; then sed -i '/^[[:space:]]*azure-ai-openai[[:space:]]*$/d' requirements.txt || true; fi
-          cat requirements.txt
           pip install -r requirements.txt
           pip install papermill ipykernel
 
@@ -65,20 +39,12 @@ jobs:
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
       - name: Run build notebook
-        working-directory: ${{ github.workspace }}
         run: |
-          papermill scripts/build_latest.ipynb scripts/build_latest.ipynb \
-            -p OUTPUT_DIR "data/raw"
-          echo "After build:"
-          ls -la "$GITHUB_WORKSPACE/data/raw" || true
-          test -f "$GITHUB_WORKSPACE/data/raw/latest.csv" || (echo "latest.csv missing after build"; exit 1)
+          papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
 
       - name: Run enrich notebook
-        working-directory: ${{ github.workspace }}
         run: |
-          papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb \
-            -p OUTPUT_DIR "data/raw" \
-            -p LATEST_CSV_ABS "$GITHUB_WORKSPACE/data/raw/latest.csv"
+          papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
       - name: Commit outputs if changed
         run: |
