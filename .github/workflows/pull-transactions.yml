@@ -1,4 +1,4 @@
-﻿name: Build & Enrich latest.csv
+name: Build & Enrich latest.csv
 
 on:
   workflow_dispatch: {}
