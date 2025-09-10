@@ -1,4 +1,4 @@
-﻿pandas
+pandas
 plaid-python
 jupyter
 python-dotenv
