@@ -1,7 +1,7 @@
-name: Build & Enrich latest.csv
+﻿name: Build & Enrich latest.csv
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
     - cron: "29 */6 * * *"   # every 6 hours at :29
 
@@ -21,45 +21,34 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-
-      # Azure OpenAI (for merchant labeling, embeddings, digests, etc.)
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
       AZURE_OPENAI_EMBEDDINGS: ${{ secrets.AZURE_OPENAI_EMBEDDINGS }}
-      # Optional explicit version override:
       AZURE_OPENAI_API_VERSION: 2024-02-15-preview
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install deps (sanitize requirements)
-        run: |
-          set -eux
-          echo "---- requirements.txt (pre-sanitize) ----"
-          cat requirements.txt || true
-          # Remove any accidental azure-ai-openai lines to avoid 404
-          sed -i '/^[[:space:]]*azure-ai-openai[[:space:]]*$/d' requirements.txt || true
-          echo "---- requirements.txt (post-sanitize) ----"
-          cat requirements.txt
-
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install papermill ipykernel
-
-      - name: Debug: show repo tree & top files
+      - name: Debug: show repo tree & head
         run: |
           set -eux
           ls -la
           git rev-parse HEAD
-          echo "---- show requirements from repo ----"
+          echo "---- requirements.txt (raw) ----"
+          cat requirements.txt || true
+
+      - name: Install deps (sanitize requirements)
+        run: |
+          set -eux
+          # Strip any accidental 'azure-ai-openai' lines so install never breaks
+          sed -i '/^[[:space:]]*azure-ai-openai[[:space:]]*$/d' requirements.txt || true
+          echo "---- requirements.txt (sanitized) ----"
           cat requirements.txt
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install papermill ipykernel
 
       - name: Create runtime state (tokens/cursor)
         run: |
@@ -79,7 +68,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Track the stable CSV used by Power BI and the merchant dimension (AI cache)
           git add data/raw/latest.csv config/merchants_dim.csv
           if ! git diff --staged --quiet; then
             git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
