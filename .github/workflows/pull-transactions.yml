@@ -2,20 +2,36 @@
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "29 */6 * * *"   # every 6 hours at :29 (optional—remove if you don't want auto runs)
 
 permissions:
   contents: write
 
+concurrency:
+  group: spending-dashboard-build-latest
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
+      PYTHONUNBUFFERED: "1"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIP_NO_PYTHON_VERSION_WARNING: "1"
+
       PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
       PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-      # Azure keys optional
+
+      # Azure keys optional (enrich will no-op AI if these are unset)
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
@@ -25,6 +41,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
 
       - name: Install deps
         run: |
@@ -35,19 +66,17 @@ jobs:
       - name: Prepare runtime state
         run: |
           mkdir -p .state
-          echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
-          if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
+          printf '%s' "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
+          [ -f .state/plaid_cursors.json ] || echo '{}' > .state/plaid_cursors.json
 
       - name: Run build notebook
-        working-directory: ${{ github.workspace }}
         run: |
           papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
-          echo "After build:"
+          echo "After build (listing data/raw):"
           ls -la "$GITHUB_WORKSPACE/data/raw" || true
-          test -f "$GITHUB_WORKSPACE/data/raw/latest.csv" || (echo "latest.csv missing after build"; exit 1)
+          test -f "$GITHUB_WORKSPACE/data/raw/latest.csv" || (echo "latest.csv missing after build" && exit 1)
 
       - name: Run enrich notebook
-        working-directory: ${{ github.workspace }}
         run: |
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
