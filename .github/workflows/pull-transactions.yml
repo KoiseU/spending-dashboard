@@ -15,8 +15,7 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-
-      # Azure keys optional; AI steps will no-op if missing
+      # Azure keys optional; AI cells no-op if unset
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
@@ -27,16 +26,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug: show repo head & requirements
+      - name: Install deps
         run: |
-          set -eux
-          git rev-parse HEAD
-          test -f requirements.txt && cat requirements.txt || true
-
-      - name: Install deps (sanitize)
-        run: |
-          set -eux
-          sed -i '/^[[:space:]]*azure-ai-openai[[:space:]]*$/d' requirements.txt || true
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install papermill ipykernel
