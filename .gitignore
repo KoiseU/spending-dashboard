@@ -19,3 +19,8 @@ __pycache__/
 # --- OS cruft ---
 .DS_Store
 Thumbs.db
+
+# processed artifacts & vector stores
+data/processed/*
+!data/processed/.gitkeep
+vectorstore/

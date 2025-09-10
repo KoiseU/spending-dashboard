@@ -1,4 +1,4 @@
-name: Build latest.csv
+name: Build & Enrich latest.csv
 
 on:
   workflow_dispatch:
@@ -21,7 +21,14 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-      DAYS_BACK: "90"  # adjust history window if needed
+
+      # Azure OpenAI (for merchant labeling, embeddings, digests, etc.)
+      AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
+      AZURE_OPENAI_EMBEDDINGS: ${{ secrets.AZURE_OPENAI_EMBEDDINGS }}
+      # Optional explicit version override:
+      AZURE_OPENAI_API_VERSION: 2024-02-15-preview
 
     steps:
       - name: Checkout
@@ -30,7 +37,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.11"
 
       - name: Install deps
         run: |
@@ -38,24 +45,29 @@ jobs:
           pip install -r requirements.txt
           pip install papermill ipykernel
 
-      - name: Create runtime state
+      - name: Create runtime state (tokens/cursor)
         run: |
           mkdir -p .state
           echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
-      - name: Execute notebook -> latest.csv
+      - name: Execute build notebook -> data/raw/latest.csv
         run: |
           papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
 
-      - name: Commit latest.csv (if changed)
+      - name: Execute enrich notebook -> overwrite data/raw/latest.csv
+        run: |
+          papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
+
+      - name: Commit outputs (if changed)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/latest.csv
+          # Track the stable CSV used by Power BI and the merchant dimension (AI cache)
+          git add data/raw/latest.csv config/merchants_dim.csv
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update latest.csv [skip ci]"
+            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
             git push
-          else:
+          else
             echo "No changes to commit."
           fi

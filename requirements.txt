@@ -3,3 +3,9 @@ plaid-python
 jupyter
 python-dotenv
 requests
+pyyaml
+azure-ai-openai
+tenacity
+numpy
+openai
+
