@@ -1,16 +1,10 @@
-name: Build & Enrich latest.csv
+﻿name: Build & Enrich Latest
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: "29 */6 * * *"   # every 6 hours at :29
+  workflow_dispatch:
 
 permissions:
   contents: write
-
-concurrency:
-  group: build-latest
-  cancel-in-progress: false
 
 jobs:
   run:
@@ -21,6 +15,8 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
+
+      # Azure keys optional; AI steps will no-op if missing
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
@@ -31,40 +27,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug: show repo tree & head
+      - name: Debug: show repo head & requirements
         run: |
           set -eux
-          ls -la
           git rev-parse HEAD
-          echo "---- requirements.txt (raw) ----"
-          cat requirements.txt || true
+          test -f requirements.txt && cat requirements.txt || true
 
-      - name: Install deps (sanitize requirements)
+      - name: Install deps (sanitize)
         run: |
           set -eux
-          # Strip any accidental 'azure-ai-openai' lines so install never breaks
           sed -i '/^[[:space:]]*azure-ai-openai[[:space:]]*$/d' requirements.txt || true
-          echo "---- requirements.txt (sanitized) ----"
-          cat requirements.txt
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install papermill ipykernel
 
-      - name: Create runtime state (tokens/cursor)
+      - name: Prepare runtime state
         run: |
           mkdir -p .state
-          echo "${{ secrets.PLAID_ACCESS_TOKENS }}" > .state/access_tokens.json
+          echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
-      - name: Execute build notebook -> data/raw/latest.csv
+      - name: Run build notebook
         run: |
           papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
 
-      - name: Execute enrich notebook -> overwrite data/raw/latest.csv
+      - name: Run enrich notebook
         run: |
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
-      - name: Commit outputs (if changed)
+      - name: Commit outputs if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
