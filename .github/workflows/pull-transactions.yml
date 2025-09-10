@@ -67,18 +67,18 @@ jobs:
       - name: Run build notebook
         working-directory: ${{ github.workspace }}
         run: |
-          papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
-          echo "After build, listing data/raw:"
+          papermill scripts/build_latest.ipynb scripts/build_latest.ipynb \
+            -p OUTPUT_DIR "data/raw"
+          echo "After build:"
           ls -la "$GITHUB_WORKSPACE/data/raw" || true
           test -f "$GITHUB_WORKSPACE/data/raw/latest.csv" || (echo "latest.csv missing after build"; exit 1)
 
-      - name: Run enrich notebook (pin absolute CSV path, but resolver will also find it)
+      - name: Run enrich notebook
         working-directory: ${{ github.workspace }}
-        env:
-          LATEST_CSV_ABS: ${{ github.workspace }}/data/raw/latest.csv
         run: |
-          echo "LATEST_CSV_ABS=$LATEST_CSV_ABS"
-          papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
+          papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb \
+            -p OUTPUT_DIR "data/raw" \
+            -p LATEST_CSV_ABS "$GITHUB_WORKSPACE/data/raw/latest.csv"
 
       - name: Commit outputs if changed
         run: |
