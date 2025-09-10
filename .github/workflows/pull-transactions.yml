@@ -15,7 +15,7 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-      # Azure keys optional; AI cells no-op if unset
+      # Azure keys optional
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
@@ -39,10 +39,15 @@ jobs:
           if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
       - name: Run build notebook
+        working-directory: ${{ github.workspace }}
         run: |
           papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
+          echo "After build:"
+          ls -la "$GITHUB_WORKSPACE/data/raw" || true
+          test -f "$GITHUB_WORKSPACE/data/raw/latest.csv" || (echo "latest.csv missing after build"; exit 1)
 
       - name: Run enrich notebook
+        working-directory: ${{ github.workspace }}
         run: |
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
