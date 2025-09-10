@@ -4,8 +4,7 @@ jupyter
 python-dotenv
 requests
 pyyaml
-azure-ai-openai
+openai
 tenacity
 numpy
-openai
-
+pyarrow
