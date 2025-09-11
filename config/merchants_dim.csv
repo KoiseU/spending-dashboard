@@ -1,5 +1,4 @@
 merchant_key,display_name,category,subcategory,tags,source,confidence,last_updated
-<<<<<<< HEAD,,,,,,,
 ACH PAYMENT FROM ACCOUNT ENDING,ACH PAYMENT,Transfers,Payments,"payment,transfer,ACH,banking",azure,0.9,2025-09-11T06:20:29.115975
 APPLE CARD,APPLE CARD,Shopping,Electronics,"Apple,Credit Card,Payments,Technology,Finance",azure,0.9,2025-09-11T06:20:29.852121
 ARCHISTHA,ARCHISTHA,Misc,Art & Design,"art,design,creative,services,local",azure,0.9,2025-09-11T06:20:30.802816
@@ -60,5 +59,7 @@ WITHDRAWAL SIGNATURE BASE APPLE CASH SENT MONEY 1INFINITELOOP CA DATE %% CARD,AP
 WITHDRAWAL TRANSFER TO LOAN,WITHDRAWAL TRANSFER TO LOAN,Transfers,Loan Payments,"transfer,loan,withdrawal,payment",azure,0.9,2025-09-11T06:21:28.022740
 YARD HOUSE,YARD HOUSE,Dining,Casual Dining,"restaurant,bar,food,casual,brewery",azure,0.9,2025-09-11T06:21:29.654624
 ZARA,ZARA,Shopping,Clothing,"Fashion,Apparel,Retail,Trendy,European",azure,0.9,2025-09-11T06:21:30.456019
+MICROSOFT,MICROSOFT,Subscriptions,Software,"software,technology,subscriptions",azure,0.9,2025-09-11T13:00:31.931562
+<<<<<<< HEAD,,,,,,,
 =======,,,,,,,
 >>>>>>> 57468ac (updated),,,,,,,
