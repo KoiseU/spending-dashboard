@@ -1,0 +1,61 @@
+merchant_key,display_name,category,subcategory,tags,source,confidence,last_updated
+ACH PAYMENT FROM ACCOUNT ENDING,ACH PAYMENT,Transfers,Payments,"payment,transfer,ACH,banking",azure,0.9,2025-09-11T06:20:29.115975
+APPLE CARD,APPLE CARD,Shopping,Electronics,"Apple,Credit Card,Payments,Technology,Finance",azure,0.9,2025-09-11T06:20:29.852121
+ARCHISTHA,ARCHISTHA,Misc,Art & Design,"art,design,creative,services,local",azure,0.9,2025-09-11T06:20:30.802816
+ARCO,ARCO,Gas,Fuel,"fuel,gas station,convenience,automotive",azure,0.9,2025-09-11T06:20:32.041976
+BASE DMV,BASE DMV,Misc,Vehicle Services,"DMV,Vehicle,Services,Government,Registration",azure,0.9,2025-09-11T06:20:33.227053
+BLAZE PIZZA,BLAZE PIZZA,Dining,Pizza,"pizza,dining,fast casual,restaurant,food",azure,0.9,2025-09-11T06:20:34.076829
+BULLET LEGAL SERVI,BULLET LEGAL SERVICES,Misc,Legal Services,"legal,services,consultation",azure,0.9,2025-09-11T06:20:34.766083
+CASHBACK BONUS REDEMPTION PYMT STMT CRDT,CASHBACK BONUS REDEMPTION,Income,Rewards,"cashback,bonus,redemption,payment,credit",azure,0.9,2025-09-11T06:20:35.708187
+CHINOSMEX,CHINO'S MEXICAN RESTAURANT,Dining,Mexican,"restaurant,Mexican,dining,food,takeout",azure,0.9,2025-09-11T06:20:36.455314
+DEPOSIT CASH APP KOISE UGO CASH OAKLAND CA DATE %% CARD,CASH APP,Income,Deposits,"cash,deposit,app,transfer,income",azure,0.9,2025-09-11T06:20:37.299675
+DEPOSIT KOSISONNA UGOC TYPE: BANK XFER ID: CO: APPLE CASH NAME: KOSISONNA UGOC %% ACH ECC WEB %% ACH TRACE,KOSISONNA UGOC,Income,Bank Transfer,"Deposit,Bank,Transfer,ACH,Apple Cash",azure,0.9,2025-09-11T06:20:38.597115
+DEPOSIT SQUARE INC TYPE: SQ ID: DATA: T CO: SQUARE INC %% ACH ECC PPD %% ACH TRACE,SQUARE INC,Income,Deposits,"Payment,Deposit,ACH,Financial,Square",azure,0.9,2025-09-11T06:20:39.511764
+DILOHOME,DILO HOME,Shopping,Home Goods,"furniture,decor,home,shopping,interior",azure,0.9,2025-09-11T06:20:40.946769
+FACTORY,FACTORY,Shopping,Clothing,"apparel,retail,fashion",azure,0.9,2025-09-11T06:20:41.725428
+FLETCHER JONES,FLETCHER JONES,Shopping,Automotive,"Cars,Dealership,Luxury,Sales,Service",azure,0.9,2025-09-11T06:20:42.497808
+FLOSPORTS,FLOSPORTS,Entertainment,Streaming Services,"sports,streaming,entertainment,live events,subscription",azure,0.9,2025-09-11T06:20:43.358209
+GAS STATIONS,GAS STATIONS,Gas,Fuel,"fuel,petrol,service station,refueling,convenience",azure,0.9,2025-09-11T06:20:44.080814
+GEICO,GEICO,Misc,Insurance,"Insurance,Auto,Coverage,GEICO,Finance",azure,0.9,2025-09-11T06:20:45.143908
+INTERNET PAYMENT THANK YOU,INTERNET PAYMENT,Utilities,Internet Services,"payment,internet,utilities",azure,0.9,2025-09-11T06:20:45.931595
+JIU JITSU FEDERATIO,JIU JITSU FEDERATION,Education,Martial Arts,"martial arts,training,self-defense,sports,fitness",azure,0.9,2025-09-11T06:20:46.702033
+KOSISONNA UGOCHU,KOSISONNA UGOCHU,Misc,Other,"services,local,support,community",azure,0.9,2025-09-11T06:20:47.963322
+LAS VEGAS CONVENTIO,LAS VEGAS CONVENTION CENTER,Entertainment,Events,"convention,events,Las Vegas,entertainment,exhibitions",azure,0.9,2025-09-11T06:20:48.845405
+OCHATHAIF,OCHA THAI,Dining,Thai Restaurant,"Thai,Restaurant,Dining,Food,Takeout",azure,0.9,2025-09-11T06:20:49.675281
+OD PRIVILEGE FEE %% ACH ECC PPD %% ACH TRACE,OD PRIVILEGE FEE,Fees,Bank Fees,"banking,fees,ACH,transactions,overdraft",azure,0.9,2025-09-11T06:20:50.576315
+OPENAI,OPENAI,Subscriptions,Software,"AI,Technology,Software,Subscription,Innovation",azure,0.9,2025-09-11T06:20:51.334222
+PAYMENT HOME BANKING TRANSFER FROM SHARE INTERNET ACCESS :,HOME BANKING TRANSFER,Transfers,Banking,"transfer,banking,internet,payment,share",azure,0.9,2025-09-11T06:20:52.292456
+PAYMENT TO OTHER PARTY USING TOKEN,PAYMENT TO OTHER PARTY,Transfers,Token Payment,"payment,transfer,token,financial,transaction",azure,0.9,2025-09-11T06:20:53.205159
+PAYMENT TRANSFER FROM SHARE,PAYMENT TRANSFER FROM SHARE,Transfers,Money Transfer,"transfer,payment,share,finance,transaction",azure,0.9,2025-09-11T06:20:54.093692
+PEINTOTHA,PEINTOTHA,Misc,Art Supplies,"art,supplies,crafts,hobbies,creative",azure,0.9,2025-09-11T06:20:55.127482
+PETAL,PETAL,Misc,Financial Services,"finance,credit,services",azure,0.9,2025-09-11T06:20:55.889371
+PLAID,PLAID,Misc,Financial Services,"Finance,Technology,Payments",azure,0.9,2025-09-11T06:20:56.562502
+PLAID TECHNOLOGIES INC,PLAID TECHNOLOGIES,Misc,Financial Services,"Fintech,Technology,Payments",azure,0.9,2025-09-11T06:20:58.285098
+POS SIGNATURE PURCHASE,POS SIGNATURE PURCHASE,Misc,Payments,"transaction,payment,purchase",azure,0.9,2025-09-11T06:21:00.431936
+POS SIGNATURE PURCHASE USING APPLE,APPLE,Shopping,Electronics,"electronics,apple,purchase,signature,shopping",azure,0.9,2025-09-11T06:21:01.811272
+POS SIGNATURE PURCHASE USING TOKEN,POS SIGNATURE PURCHASE,Misc,Payments,"transaction,payment,purchase",azure,0.9,2025-09-11T06:21:02.548897
+RAISING CANE'S CHICKEN FINGERS,RAISING CANE'S,Dining,Fast Food,"chicken,fast food,dining,restaurant,takeout",azure,0.9,2025-09-11T06:21:03.313987
+ROOT INSURANCE,ROOT INSURANCE,Misc,Insurance,"Insurance,Finance,Services",azure,0.9,2025-09-11T06:21:06.190142
+S&S,SAV-ON FOODS,Groceries,Supermarket,"grocery,food,shopping,supermarket,essentials",azure,0.9,2025-09-11T06:21:07.069012
+SMITH'S,SMITH'S,Groceries,Supermarket,"grocery,supermarket,food,shopping,essentials",azure,0.9,2025-09-11T06:21:07.966915
+SOUTHERN NV HEALTH DIST,SOUTHERN NEVADA HEALTH DISTRICT,Health,Public Health,"Health,Government,Services",azure,0.9,2025-09-11T06:21:08.719127
+SPECTATION SPORTS,SPECTATION SPORTS,Entertainment,Sports,"sports,entertainment,events,tickets,activities",azure,0.9,2025-09-11T06:21:10.350547
+TARGET,TARGET,Shopping,Retail,"Department Store,Clothing,Home Goods,Electronics,Groceries",azure,0.9,2025-09-11T06:21:11.076773
+TARGET PLUS,TARGET PLUS,Shopping,Retail,"retail,shopping,discounts,home goods,clothing",azure,0.9,2025-09-11T06:21:12.048129
+THAILITED,THAI LITED,Dining,Asian Cuisine,"Thai,Restaurant,Dining,Food,Takeout",azure,0.9,2025-09-11T06:21:13.120624
+THAISPOON,THAI SPOON,Dining,Asian Cuisine,"Thai,Restaurant,Dining,Food,Takeout",azure,0.9,2025-09-11T06:21:14.078478
+THAITASTE,THAI TASTE,Dining,Asian Cuisine,"Thai,Restaurant,Dining,Food,Cuisine",azure,0.9,2025-09-11T06:21:15.147295
+THE HOME DEPOT,HOME DEPOT,Shopping,Home Improvement,"hardware,tools,renovation,construction,DIY",azure,0.9,2025-09-11T06:21:16.063724
+THEBAR,THE BAR,Dining,Bar,"drinks,nightlife,social,entertainment,food",azure,0.9,2025-09-11T06:21:16.880059
+UFC FIT CENTENNIAL,UFC FIT CENTENNIAL,Health,Fitness,"gym,fitness,training,health,wellness",azure,0.9,2025-09-11T06:21:18.016180
+UFC GYM,UFC GYM,Health,Fitness,"gym,fitness,training,health,exercise",azure,0.9,2025-09-11T06:21:18.932537
+WEALTHFRONT,WEALTHFRONT,Finance,Investing,"Investing,Finance,Wealth Management",azure,0.9,2025-09-11T06:21:19.897984
+WITHDRAWAL ALLY TYPE: ALLY PAYMT ID: CO: ALLY NAME: KOSISONNA UGOCHUKW %% ACH ECC WEB %% ACH TRACE,ALLY PAYMENT,Transfers,ACH Transfer,"withdrawal,payment,ACH,banking,transfer",azure,0.9,2025-09-11T06:21:21.133758
+WITHDRAWAL AMEX EPAYMENT TYPE: ACH PMT ID: DATA: AM CO: AMEX EPAYMENT NAME: KOSISONNA UGOCHUKWU %% ACH ECC WEB %% ACH TRACE,KOSISONNA UGOCHUKWU,Transfers,ACH Payment,"withdrawal,payment,ACH,transfer,AMEX",azure,0.9,2025-09-11T06:21:22.765471
+WITHDRAWAL AMEX EPAYMENT TYPE: ACH PMT ID: DATA: ER AM CO: AMEX EPAYMENT NAME: KOSISONNA UGOCHUKWU %% ACH ECC WEB %% ACH TRACE,KOSISONNA UGOCHUKWU,Transfers,ACH Payment,"withdrawal,payment,ACH,transfer,AMEX",azure,0.9,2025-09-11T06:21:24.106137
+WITHDRAWAL CHASE CREDIT CRD TYPE: AUTOPAY ID: CO: CHASE CREDIT CRD %% ACH ECC PPD %% ACH TRACE,CHASE AUTOPAY,Transfers,Credit Card Payment,"payment,credit card,auto pay,withdrawal,banking",azure,0.9,2025-09-11T06:21:25.623830
+WITHDRAWAL HOME BANKING TRANSFER TO LOAN INTERNET ACCESS :,HOME BANKING TRANSFER,Transfers,Loan Payment,"banking,transfer,loan,payment,internet",azure,0.9,2025-09-11T06:21:26.582055
+WITHDRAWAL SIGNATURE BASE APPLE CASH SENT MONEY 1INFINITELOOP CA DATE %% CARD,APPLE CASH,Transfers,Cash Transfer,"Apple,Cash,Transfer,Payment,Digital",azure,0.9,2025-09-11T06:21:27.381504
+WITHDRAWAL TRANSFER TO LOAN,WITHDRAWAL TRANSFER TO LOAN,Transfers,Loan Payments,"transfer,loan,withdrawal,payment",azure,0.9,2025-09-11T06:21:28.022740
+YARD HOUSE,YARD HOUSE,Dining,Casual Dining,"restaurant,bar,food,casual,brewery",azure,0.9,2025-09-11T06:21:29.654624
+ZARA,ZARA,Shopping,Clothing,"Fashion,Apparel,Retail,Trendy,European",azure,0.9,2025-09-11T06:21:30.456019
