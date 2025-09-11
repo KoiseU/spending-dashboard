@@ -11,6 +11,7 @@ data/raw/*
 
 # --- notebooks ---
 **/.ipynb_checkpoints/
+**/_out_*.ipynb
 
 # --- python build artifacts ---
 __pycache__/
@@ -24,3 +25,4 @@ Thumbs.db
 data/processed/*
 !data/processed/.gitkeep
 vectorstore/
+vectorstore/*.parquet
