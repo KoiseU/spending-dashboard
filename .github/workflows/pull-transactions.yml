@@ -69,10 +69,6 @@ jobs:
           printf '%s' "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
           [ -f .state/plaid_cursors.json ] || echo '{}' > .state/plaid_cursors.json
 
-      - name: Run accounts_dim notebook
-        run: |
-          papermill scripts/build_accounts_dim.ipynb scripts/build_accounts_dim.ipynb
-
       - name: Run build notebook
         run: |
           papermill scripts/build_latest.ipynb scripts/build_latest.ipynb
@@ -90,17 +86,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Always add latest.csv (we already verified it exists earlier)
           git add data/raw/latest.csv
 
+          # Add merchants_dim.csv only if it exists
           if [ -f config/merchants_dim.csv ]; then
             git add config/merchants_dim.csv
-          fi
-          if [ -f config/accounts_dim.csv ]; then
-            git add config/accounts_dim.csv
+          else
+            echo "No merchants_dim.csv to add (AI mapping may have been skipped)."
           fi
 
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update latest.csv & dims [skip ci]"
+            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
             git push
           else
             echo "No changes to commit."
