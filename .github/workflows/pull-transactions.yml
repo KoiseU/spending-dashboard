@@ -1,4 +1,4 @@
-﻿name: Build & Enrich Latest
+name: Build & Enrich Latest
 
 on:
   workflow_dispatch:
