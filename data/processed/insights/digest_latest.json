@@ -4,7 +4,7 @@
     "current": {
       "start": "2025-09-01",
       "end": "2025-09-07",
-      "label": "Last completed week (Mon-Sun)"
+      "label": "Last completed week (Mon–Sun)"
     },
     "previous": {
       "start": "2025-08-25",
@@ -19,7 +19,11 @@
     "income_current": 1084.36,
     "income_previous": 1089.75
   },
+<<<<<<< HEAD
   "headline": "Significant Reduction in Weekly Spending",
+=======
+  "headline": "Weekly digest 9/1 - 9/7",
+>>>>>>> 09e4614 (u)
   "key_metrics": [
     {
       "name": "Total Spend",
@@ -46,7 +50,11 @@
       "spend": 21.36
     },
     {
+<<<<<<< HEAD
       "label": "APPLE CASH",
+=======
+      "label": "Uncategorized",
+>>>>>>> 09e4614 (u)
       "spend": 13.74
     }
   ],
@@ -56,6 +64,7 @@
       "note": "One spending anomaly detected this week."
     }
   ],
+<<<<<<< HEAD
   "action_items": [
     {
       "title": "Review spending habits",
@@ -64,4 +73,8 @@
     }
   ],
   "summary": "2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432)."
+=======
+  "action_items": [],
+  "summary": "9/1 - 9/7: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432)."
+>>>>>>> 09e4614 (u)
 }
