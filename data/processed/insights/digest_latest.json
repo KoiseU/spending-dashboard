@@ -53,14 +53,14 @@
   "risks": [
     {
       "type": "anomaly",
-      "note": "One spending anomaly detected this week."
+      "note": "One spending anomaly detected."
     }
   ],
   "action_items": [
     {
-      "title": "Maintain current spending habits",
-      "impact_usd": 1100,
-      "rationale": "Continued reduction in spending can lead to significant savings."
+      "title": "Continue monitoring spending habits",
+      "impact_usd": 100,
+      "rationale": "To maintain reduced spending levels."
     }
   ],
   "summary": "2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432)."
