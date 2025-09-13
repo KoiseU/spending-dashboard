@@ -1,23 +1,16 @@
-Welcome to your weekly check-in. Spend $0.00 (WoW n/a).
+# Weekly Executive Summary (9/1 - 9/7)
 
-# Weekly Snapshot — Weekly Executive Summary (9-1 to 9-7)
-## Snapshot
-- Total Spend: $0.00 (WoW n/a)
+2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).
+
+## Key Metrics
+- **Spend (week):** $526.40 (-67.7%)
+- **Income (week):** $1,084.36
+
 ## Drivers
-Top Spending Categories:
-- POS SIGNATURE PURCHASE: $432
-- ARCO: $59
-- DILO HOME: $21
-- APPLE CASH: $14
-## Category Mix
-- Mix stable; see dashboard for breakdown.
-## Subscriptions & Anomalies
-- Anomalies: 0
-## Cash Flow
-- Net cash flow covered this week.
-## Notables
-- Largest line item listed above.
-## Recommendations
-- Keep discretionary spend in check.
-## Next Week Watchlist
-- Review anomalies; monitor categories that may rebound.
+- **Misc:** $432
+- **Gas:** $59
+- **Shopping:** $21
+- **Transfers to Friends/Family:** $14
+
+## Risks
+- **anomaly:** 1 anomalies this week
