@@ -4,28 +4,10 @@ scripts/.env
 .state/*
 !.state/.gitkeep
 
-# --- data outputs (raw) ---
+# --- data outputs ---
 data/raw/*
 !data/raw/latest.csv
 !data/raw/.gitkeep
-
-# --- processed artifacts & vector stores ---
-# Ignore processed by default, then explicitly allow the files we want to publish
-data/processed/*
-!data/processed/.gitkeep
-!data/processed/latest_enriched.csv
-!data/processed/digest_latest.txt
-!data/processed/goal_nudges_latest.txt
-
-# Publish insights (weekly & monthly digests/subjects) but keep debug out
-!data/processed/insights/
-!data/processed/insights/**
-data/processed/insights/_debug/
-data/processed/insights/_debug/**
-
-# Vectorstore stays untracked
-vectorstore/
-vectorstore/**
 
 # --- notebooks ---
 **/.ipynb_checkpoints/
@@ -38,6 +20,19 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# --- scripts runtime scratch (if any) ---
+# --- processed artifacts & vector stores ---
+data/processed/*
+!data/processed/.gitkeep
+
+# Allow weekly executive digest artifacts for Power BI
+!data/processed/insights/
+!data/processed/insights/digest_latest.json
+!data/processed/insights/digest_latest.md
+!data/processed/insights/digest_latest_flat.csv
+
+# Keep vector store out of git
+vectorstore/
+
+# misc
 scripts/.state/
 scripts/data/
