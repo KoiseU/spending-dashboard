@@ -1,25 +1,21 @@
 ## Weekly Digest: 2025-09-01-2025-09-07
-Weekly digest 2025-09-01-2025-09-07
+Significant Reduction in Weekly Spending
 
-2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).
+2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).
 
 
 **Key metrics (WoW)**
-- Spend (week): $526.40 (-67.7%)
-- Income (week): $1,084.36
+- Total Spend: $526.40 (-6769.0%)
+- Total Income: $1,084.36 (-4.0%)
 
 **Top drivers (this week)**
-- Misc: $432.44
-- Gas: $58.86
-- Shopping: $21.36
-- Transfers to Friends/Family: $13.74
+- POS SIGNATURE PURCHASE: $432.44
+- ARCO: $58.86
+- DILO HOME: $21.36
+- APPLE CASH: $13.74
 
 **Risks**
-<<<<<<< HEAD
 - anomaly: One spending anomaly detected.
 
 **Action items**
-- Maintain Low Spending Trend — est. weekly impact $1,100. Continue monitoring and controlling discretionary expenses.
-=======
-- anomaly: 1 anomalies this week
->>>>>>> c61d800 (u)
+- Maintain current spending habits — est. weekly impact $1,100. Continued reduction in spending can lead to significant savings.
