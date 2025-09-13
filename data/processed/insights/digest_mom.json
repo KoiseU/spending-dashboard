@@ -2,8 +2,7 @@
   "window": {
     "current": {
       "start": "2025-08-01",
-      "end": "2025-08-31",
-      "label": "Last completed month"
+      "end": "2025-08-31"
     },
     "previous": {
       "start": "2025-07-01",
@@ -39,7 +38,5 @@
       "category": "Groceries",
       "spend": 98.64
     }
-  ],
-  "subscriptions_count": 0,
-  "anomalies_count": 0
+  ]
 }

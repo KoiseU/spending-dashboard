@@ -15,7 +15,7 @@ Significant Reduction in Weekly Spending
 - APPLE CASH: $13.74
 
 **Risks**
-- anomaly: One spending anomaly detected.
+- anomaly: One spending anomaly detected this week.
 
 **Action items**
-- Maintain current spending habits — est. weekly impact $1,100. Continued reduction in spending can lead to significant savings.
+- Review spending habits — est. weekly impact $100. Continued monitoring could lead to further reductions in unnecessary expenses.
