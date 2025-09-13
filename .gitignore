@@ -24,3 +24,6 @@ Thumbs.db
 data/processed/*
 !data/processed/.gitkeep
 vectorstore/
+
+scripts/.state/
+scripts/data/
