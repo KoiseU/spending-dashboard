@@ -12,53 +12,27 @@
     }
   },
   "totals": {
-    "spend_current": 1026.4,
-    "spend_previous": 1629.2,
-    "spend_delta": -602.8,
-    "spend_delta_pct": -0.37,
-    "income_current": 1084.36,
-    "income_previous": 2089.75
+    "spend_current": 0.0,
+    "spend_previous": 0.0,
+    "spend_delta": 0.0,
+    "spend_delta_pct": 0.0,
+    "income_current": 0.0,
+    "income_previous": 0.0
   },
   "headline": "Weekly digest 2025-09-01–2025-09-07",
   "key_metrics": [
     {
       "name": "Spend (week)",
-      "value": 1026.4,
-      "delta_pct": -0.37
+      "value": 0.0,
+      "delta_pct": 0.0
     },
     {
       "name": "Income (week)",
-      "value": 1084.36,
+      "value": 0.0,
       "delta_pct": null
     }
   ],
-  "top_drivers": [
-    {
-      "label": "Finance",
-      "spend": 500.0
-    },
-    {
-      "label": "Misc",
-      "spend": 432.44
-    },
-    {
-      "label": "Gas",
-      "spend": 58.86
-    },
-    {
-      "label": "Shopping",
-      "spend": 21.36
-    },
-    {
-      "label": "nan",
-      "spend": 13.74
-    }
-  ],
-  "risks": [
-    {
-      "type": "anomaly",
-      "note": "1 anomalies this week"
-    }
-  ],
+  "top_drivers": [],
+  "risks": [],
   "action_items": []
 }

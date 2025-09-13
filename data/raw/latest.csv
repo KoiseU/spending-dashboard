@@ -1,3 +1,3 @@
-date,name,merchant_name,merchant_key,category,amount,bank_name,card_name,display_name_final,category_final,subcategory_final,tags_final,is_non_spend_flow,confidence_final,source_final
-2025-09-12,Home Depot,The Home Depot,THE HOME DEPOT,,5.39,Discover,Discover,The Home Depot,,,,False,map,raw
-2025-09-10,POS Signature Purchase using Token,,POS SIGNATURE PURCHASE USING TOKEN,Misc,18.61,Petal,Petal,POS Signature Purchase using Token,,,,False,map,raw
+txn_uid,date,bank_name,card_name,display_name,merchant_key,category,subcategory,tags,name,merchant_name,amount,is_subscription,is_anomaly,z_by_merchant
+b41a90fbbc12ce78acea877e7c962b06e8ed9247,2025-09-12,Discover,Discover,HOME DEPOT,THE HOME DEPOT,Shopping,Home Improvement,"hardware,tools,renovation,construction,DIY",Home Depot,The Home Depot,5.39,False,False,0.0
+c1e26abedfb009b28a87759acd4c71c060d8c7b7,2025-09-10,Petal,Petal,POS SIGNATURE PURCHASE,POS SIGNATURE PURCHASE USING TOKEN,Misc,Payments,"transaction,payment,purchase",POS Signature Purchase using Token,,18.61,False,False,0.0
