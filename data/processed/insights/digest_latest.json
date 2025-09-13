@@ -19,43 +19,44 @@
     "income_current": 1084.36,
     "income_previous": 1089.75
   },
-  "headline": "Significant Reduction in Weekly Spending",
+  "headline": "Weekly digest 2025-09-01-2025-09-07",
   "key_metrics": [
     {
-      "name": "Total Spend",
+      "name": "Spend (week)",
       "value": 526.4,
-      "delta_pct": -67.69
+      "delta_pct": -0.6769
     },
     {
-      "name": "Total Income",
+      "name": "Income (week)",
       "value": 1084.36,
-      "delta_pct": -0.04
+      "delta_pct": null
     }
   ],
   "top_drivers": [
     {
-      "label": "POS SIGNATURE PURCHASE",
+      "label": "Misc",
       "spend": 432.44
     },
     {
-      "label": "ARCO",
+      "label": "Gas",
       "spend": 58.86
     },
     {
-      "label": "DILO HOME",
+      "label": "Shopping",
       "spend": 21.36
     },
     {
-      "label": "APPLE CASH",
+      "label": "Transfers to Friends/Family",
       "spend": 13.74
     }
   ],
   "risks": [
     {
       "type": "anomaly",
-      "note": "One spending anomaly detected."
+      "note": "1 anomalies this week"
     }
   ],
+<<<<<<< HEAD
   "action_items": [
     {
       "title": "Maintain Low Spending Trend",
@@ -64,4 +65,8 @@
     }
   ],
   "summary": "2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432)."
+=======
+  "action_items": [],
+  "summary": "2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432)."
+>>>>>>> 1a731f9 (u)
 }

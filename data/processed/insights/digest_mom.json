@@ -1,0 +1,45 @@
+{
+  "window": {
+    "current": {
+      "start": "2025-08-01",
+      "end": "2025-08-31",
+      "label": "Last completed month"
+    },
+    "previous": {
+      "start": "2025-07-01",
+      "end": "2025-07-31"
+    }
+  },
+  "totals": {
+    "spend_current": 4067.79,
+    "spend_previous": 3255.14,
+    "spend_delta": 812.65,
+    "spend_delta_pct": 0.2497,
+    "income_current": 8168.73,
+    "income_previous": 3907.11
+  },
+  "top_categories": [
+    {
+      "category": "Misc",
+      "spend": 1807.42
+    },
+    {
+      "category": "nan",
+      "spend": 1630.43
+    },
+    {
+      "category": "Shopping",
+      "spend": 322.40999999999997
+    },
+    {
+      "category": "Gas",
+      "spend": 167.06
+    },
+    {
+      "category": "Groceries",
+      "spend": 98.64
+    }
+  ],
+  "subscriptions_count": 0,
+  "anomalies_count": 0
+}

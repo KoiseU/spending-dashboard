@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Weekly Spend: $526.40, Down $1,102.80 WoW
+=======
+This week 9/1 - 9/7 — Spend $526 (WoW -67.7%)
+>>>>>>> 1a731f9 (u)

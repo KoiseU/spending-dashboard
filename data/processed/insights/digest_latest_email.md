@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frugal Fiesta — Weekly Executive Summary (9-1 to 9-7)
 
 Welcome to your weekly financial fiesta! It’s time to celebrate a significant dip in spending while keeping an eye on the prize—your financial health.
@@ -40,3 +41,21 @@ Welcome to your weekly financial fiesta! It’s time to celebrate a significant 
 - **Track Discretionary Spending:** Keep an eye on the categories that could creep back up.
 
 In summary, you've navigated through a week of frugality with finesse. Keep the momentum going, and let’s see what next week brings!
+=======
+# Weekly Executive Summary (9/1 - 9/7)
+
+2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).
+
+## Key Metrics
+- **Spend (week):** $526.40 (-67.7%)
+- **Income (week):** $1,084.36
+
+## Drivers
+- **Misc:** $432
+- **Gas:** $59
+- **Shopping:** $21
+- **Transfers to Friends/Family:** $14
+
+## Risks
+- **anomaly:** 1 anomalies this week
+>>>>>>> 1a731f9 (u)
