@@ -36,3 +36,14 @@ vectorstore/
 # misc
 scripts/.state/
 scripts/data/
+
+# --- insights whitelist: ignore everything, then unignore the files we actually want ---
+data/processed/insights/*
+!data/processed/insights/wow_summary.md
+!data/processed/insights/wow_summary.html
+!data/processed/insights/wow_subject.csv
+!data/processed/insights/mom_summary.md
+!data/processed/insights/mom_summary.html
+!data/processed/insights/mom_subject.csv
+!data/processed/insights/mom_flat.csv
+!data/processed/insights/digest_latest_flat.csv
