@@ -1,5 +1,5 @@
 row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd
-header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01–2025-09-07,2025-09-01–2025-09-07: Weekly spend $0 (WoW +0.0%). Top driver: n/a.,Spend (week),0.0,0.0,,,,
-summary,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01–2025-09-07,2025-09-01–2025-09-07: Weekly spend $0 (WoW +0.0%). Top driver: n/a.,,,,,,,
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01–2025-09-07,,Spend (week),0.0,0.0,,,,
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01–2025-09-07,,Income (week),0.0,,,,,
+header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,2025-09-01-2025-09-07: Weekly spend $0 (WoW +0.0%). Top driver: n/a.,Spend (week),0.0,0.0,,,,
+summary,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,2025-09-01-2025-09-07: Weekly spend $0 (WoW +0.0%). Top driver: n/a.,,,,,,,
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,Spend (week),0.0,0.0,,,,
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,Income (week),0.0,,,,,

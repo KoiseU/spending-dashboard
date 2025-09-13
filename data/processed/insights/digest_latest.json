@@ -4,7 +4,7 @@
     "current": {
       "start": "2025-09-01",
       "end": "2025-09-07",
-      "label": "Last completed week (Mon–Sun)"
+      "label": "Last completed week (Mon-Sun)"
     },
     "previous": {
       "start": "2025-08-25",
@@ -19,7 +19,7 @@
     "income_current": 0.0,
     "income_previous": 0.0
   },
-  "headline": "Weekly digest 2025-09-01–2025-09-07",
+  "headline": "Weekly digest 2025-09-01-2025-09-07",
   "key_metrics": [
     {
       "name": "Spend (week)",
@@ -35,5 +35,5 @@
   "top_drivers": [],
   "risks": [],
   "action_items": [],
-  "summary": "2025-09-01–2025-09-07: Weekly spend $0 (WoW +0.0%). Top driver: n/a."
+  "summary": "2025-09-01-2025-09-07: Weekly spend $0 (WoW +0.0%). Top driver: n/a."
 }
