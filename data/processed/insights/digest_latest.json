@@ -19,43 +19,49 @@
     "income_current": 1084.36,
     "income_previous": 1089.75
   },
-  "headline": "Weekly digest 2025-09-01-2025-09-07",
+  "headline": "Significant Reduction in Weekly Spending",
   "key_metrics": [
     {
-      "name": "Spend (week)",
+      "name": "Total Spend",
       "value": 526.4,
-      "delta_pct": -0.6769
+      "delta_pct": -67.69
     },
     {
-      "name": "Income (week)",
+      "name": "Total Income",
       "value": 1084.36,
-      "delta_pct": null
+      "delta_pct": -0.04
     }
   ],
   "top_drivers": [
     {
-      "label": "Misc",
+      "label": "POS SIGNATURE PURCHASE",
       "spend": 432.44
     },
     {
-      "label": "Gas",
+      "label": "ARCO",
       "spend": 58.86
     },
     {
-      "label": "Shopping",
+      "label": "DILO HOME",
       "spend": 21.36
     },
     {
-      "label": "Transfers to Friends/Family",
+      "label": "APPLE CASH",
       "spend": 13.74
     }
   ],
   "risks": [
     {
       "type": "anomaly",
-      "note": "1 anomalies this week"
+      "note": "One spending anomaly detected this week."
     }
   ],
-  "action_items": [],
-  "summary": "2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432)."
+  "action_items": [
+    {
+      "title": "Review spending habits",
+      "impact_usd": 200,
+      "rationale": "Identifying unnecessary expenses could lead to further savings."
+    }
+  ],
+  "summary": "2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432)."
 }
