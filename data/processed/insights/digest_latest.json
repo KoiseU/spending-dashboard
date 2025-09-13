@@ -46,7 +46,11 @@
       "spend": 21.36
     },
     {
+<<<<<<< HEAD
       "label": "APPLE CASH",
+=======
+      "label": "Transfers to Friends/Family",
+>>>>>>> d31925d (u)
       "spend": 13.74
     }
   ],
