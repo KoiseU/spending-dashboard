@@ -46,43 +46,14 @@ jobs:
         run: |
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
-- name: Commit outputs if changed
-  shell: bash
-  run: |
-    set -euo pipefail
-
-    git config user.name "github-actions[bot]"
-    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-    # Always add latest.csv
-    git add -f data/raw/latest.csv
-
-    # Add if present
-    [ -f config/merchants_dim.csv ] && git add -f config/merchants_dim.csv || true
-
-    # Processed & insights (add only if present)
-    [ -f data/processed/latest_enriched.csv ] && git add -f data/processed/latest_enriched.csv || true
-    [ -f data/processed/digest_latest.txt ] && git add -f data/processed/digest_latest.txt || true
-    [ -f data/processed/goal_nudges_latest.txt ] && git add -f data/processed/goal_nudges_latest.txt || true
-
-    [ -f data/processed/insights/wow_subject.csv ] && git add -f data/processed/insights/wow_subject.csv || true
-    [ -f data/processed/insights/wow_subject.txt ] && git add -f data/processed/insights/wow_subject.txt || true
-    [ -f data/processed/insights/wow_summary.md ] && git add -f data/processed/insights/wow_summary.md || true
-    [ -f data/processed/insights/wow_summary.html ] && git add -f data/processed/insights/wow_summary.html || true
-
-    [ -f data/processed/insights/mom_subject.csv ] && git add -f data/processed/insights/mom_subject.csv || true
-    [ -f data/processed/insights/mom_subject.txt ] && git add -f data/processed/insights/mom_subject.txt || true
-    [ -f data/processed/insights/mom_summary.md ] && git add -f data/processed/insights/mom_summary.md || true
-    [ -f data/processed/insights/mom_summary.html ] && git add -f data/processed/insights/mom_summary.html || true
-
-    [ -f data/processed/insights/digest_latest.json ] && git add -f data/processed/insights/digest_latest.json || true
-    [ -f data/processed/insights/digest_latest.md ] && git add -f data/processed/insights/digest_latest.md || true
-    [ -f data/processed/insights/digest_latest_flat.csv ] && git add -f data/processed/insights/digest_latest_flat.csv || true
-    [ -f data/processed/insights/mom_flat.csv ] && git add -f data/processed/insights/mom_flat.csv || true
-
-    if git diff --staged --quiet; then
-      echo "No changes to commit."
-    else
-      git commit -m "Auto-update data & insights [skip ci]"
-      git push
-    fi
+      - name: Commit outputs if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw/latest.csv config/merchants_dim.csv
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
