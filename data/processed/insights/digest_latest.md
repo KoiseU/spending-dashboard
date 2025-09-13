@@ -18,4 +18,4 @@ Significant Reduction in Weekly Spending
 - anomaly: One spending anomaly detected.
 
 **Action items**
-- Maintain current spending habits — est. weekly impact $1,100. Continued reduction in spending can lead to significant savings.
+- Maintain Low Spending Trend — est. weekly impact $1,100. Continue monitoring and controlling discretionary expenses.
