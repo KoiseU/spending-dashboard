@@ -19,64 +19,52 @@
     "income_current": 1084.36,
     "income_previous": 1089.75
   },
-  "headline": "Significant Reduction in Weekly Spending",
+  "headline": "Weekly Financial Overview - Week Ending September 7, 2025",
   "key_metrics": [
     {
-      "name": "Current Spend",
+      "name": "Total Spend",
       "value": 526.4,
       "delta_pct": -67.69
     },
     {
-      "name": "Previous Spend",
-      "value": 1629.2,
-      "delta_pct": null
-    },
-    {
-      "name": "Current Income",
+      "name": "Total Income",
       "value": 1084.36,
-      "delta_pct": -0.04
-    },
-    {
-      "name": "Previous Income",
-      "value": 1089.75,
       "delta_pct": null
     },
     {
-      "name": "Spend Delta",
+      "name": "Spend Change",
       "value": -1102.8,
+      "delta_pct": -67.69
+    },
+    {
+      "name": "Subscriptions Count",
+      "value": 0,
+      "delta_pct": null
+    },
+    {
+      "name": "Anomalies Count",
+      "value": 1,
       "delta_pct": null
     }
   ],
   "top_drivers": [
     {
-      "label": "Misc",
-      "spend": 432.44
-    },
-    {
-      "label": "Gas",
-      "spend": 58.86
-    },
-    {
-      "label": "Shopping",
-      "spend": 21.36
-    },
-    {
       "label": "Uncategorized",
-      "spend": 13.74
+      "spend": 526.4
     }
   ],
   "risks": [
     {
       "type": "anomaly",
-      "note": "One spending anomaly detected this week."
+      "note": "One financial anomaly detected this week."
     }
   ],
   "action_items": [
     {
-      "title": "Review Miscellaneous Spending",
-      "impact_usd": 432.44,
-      "rationale": "High spend in Misc category warrants review to identify potential savings."
+      "title": "Review Spending Categories",
+      "impact_usd": 200,
+      "rationale": "To better categorize spending and identify potential savings."
     }
   ],
-  "summary": "9/1 - 9/7: Weekly spend $0 (WoW n/a). Top driver: Misc ($432)."
+  "summary": "9/1 - 9/7: Weekly spend $0 (WoW n/a). Top driver: Uncategorized ($526)."
 }
