@@ -1,5 +1,4 @@
 row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd
-<<<<<<< HEAD
 header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).,Spend (week),526.4,-0.6769,,,,
 summary,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).,,,,,,,
 metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,Total Spend,526.4,-67.69,,,,
@@ -9,15 +8,4 @@ driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduct
 driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,DILO HOME,21.36,,
 driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,APPLE CASH,13.74,,
 risk,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,anomaly,,One spending anomaly detected.,
-action,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,Maintain Low Spending Trend,,Continue monitoring and controlling discretionary expenses.,1100.0
-=======
-header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).,Spend (week),526.4,-0.6769,,,,
-summary,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).,,,,,,,
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,Spend (week),526.4,-0.6769,,,,
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,Income (week),1084.36,,,,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,,,,Misc,432.44,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,,,,Gas,58.86,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,,,,Shopping,21.36,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,,,,Transfers to Friends/Family,13.74,,
-risk,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Weekly digest 2025-09-01-2025-09-07,,,,,anomaly,,1 anomalies this week,
->>>>>>> 1a731f9 (u)
+action,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,Continue monitoring spending habits,,To maintain reduced spending levels.,100.0
