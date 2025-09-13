@@ -9,20 +9,13 @@ Significant Reduction in Weekly Spending
 - Total Income: $1,084.36 (-4.0%)
 
 **Top drivers (this week)**
-<<<<<<< HEAD
 - POS SIGNATURE PURCHASE: $432.44
 - ARCO: $58.86
 - DILO HOME: $21.36
 - APPLE CASH: $13.74
-=======
-- Misc: $432.44
-- Gas: $58.86
-- Shopping: $21.36
-- Transfers to Friends/Family: $13.74
->>>>>>> d31925d (u)
 
 **Risks**
-- anomaly: One spending anomaly detected this week.
+- anomaly: One spending anomaly detected.
 
 **Action items**
-- Review spending habits — est. weekly impact $200. Continued monitoring could lead to further reductions in discretionary spending.
+- Maintain current spending habits — est. weekly impact $1,100. Continued reduction in spending can lead to significant savings.

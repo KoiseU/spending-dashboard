@@ -1,15 +1,19 @@
-# Weekly Executive Summary (2025-09-01-2025-09-07)
-2025-09-01-2025-09-07: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).
+### Weekly Executive Summary
 
-**Key metrics (WoW)**
-- Spend (week): $526.40 (-67.7%)
-- Income (week): $1,084.36
+Spending significantly decreased this week, indicating improved financial management.
 
-**Top drivers**
-- Misc: $432
-- Gas: $59
-- Shopping: $21
-- Transfers to Friends/Family: $14
+- **Total Spend**: $526.4 (↓ 67.69% vs. previous week)
+- **Total Income**: $1,084.36 (↓ 0.04% vs. previous week)
+- **Spend Delta**: -$1,102.8 (↓ 67.69%)
+  
+**Top Drivers of Spend**:
+- POS Signature Purchase: $432.44
+- ARCO: $58.86
+- DILO Home: $21.36
+- Apple Cash: $13.74
 
-**Risks**
-- anomaly: 1 anomalies this week
+**Risks**:
+- Anomaly detected: One spending anomaly noted.
+
+**Action Items**:
+- **Maintain current spending habits**: Potential impact of $1,100 in savings; rationale: Continued reduction in spending can lead to significant savings.

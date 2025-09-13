@@ -46,25 +46,21 @@
       "spend": 21.36
     },
     {
-<<<<<<< HEAD
       "label": "APPLE CASH",
-=======
-      "label": "Transfers to Friends/Family",
->>>>>>> d31925d (u)
       "spend": 13.74
     }
   ],
   "risks": [
     {
       "type": "anomaly",
-      "note": "One spending anomaly detected this week."
+      "note": "One spending anomaly detected."
     }
   ],
   "action_items": [
     {
-      "title": "Review spending habits",
-      "impact_usd": 200,
-      "rationale": "Continued monitoring could lead to further reductions in discretionary spending."
+      "title": "Maintain current spending habits",
+      "impact_usd": 1100,
+      "rationale": "Continued reduction in spending can lead to significant savings."
     }
   ],
   "summary": "2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432)."
