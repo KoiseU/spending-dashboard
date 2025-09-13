@@ -86,18 +86,30 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Always add latest.csv (we already verified it exists earlier)
+          # Always add latest.csv (verified earlier)
           git add data/raw/latest.csv
 
-          # Add merchants_dim.csv only if it exists
+          # Add merchants_dim.csv if present
           if [ -f config/merchants_dim.csv ]; then
             git add config/merchants_dim.csv
           else
             echo "No merchants_dim.csv to add (AI mapping may have been skipped)."
           fi
 
+          # Add insights outputs if present (for Power BI / email body)
+          if [ -d data/processed/insights ]; then
+            git add data/processed/insights/digest_latest.json || true
+            git add data/processed/insights/digest_latest.md || true
+            git add data/processed/insights/digest_latest_flat.csv || true
+          fi
+
+          # Optional: cache embeddings so semantic features persist
+          if [ -f vectorstore/embeddings.parquet ]; then
+            git add vectorstore/embeddings.parquet
+          fi
+
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
+            git commit -m "Auto-update latest & insights [skip ci]"
             git push
           else
             echo "No changes to commit."
