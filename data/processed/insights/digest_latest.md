@@ -1,36 +1,15 @@
-<<<<<<< HEAD
-## Weekly Digest: 2025-09-01-2025-09-07
+# Weekly Executive Summary (9/1 - 9/7)
 Significant Reduction in Weekly Spending
 
-2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).
-=======
-# Weekly Executive Summary (9/1 - 9/7)
-Weekly digest 9/1 - 9/7
-
-9/1 - 9/7: Weekly spend $526 (WoW -67.7%). Top driver: Misc ($432).
->>>>>>> 09e4614 (u)
+9/1 - 9/7: Weekly spend $0 (WoW n/a). Top driver: Misc ($432).
 
 ## Key Metrics
-- **Spend (week):** $526.40 (-67.7%)
-- **Income (week):** $1,084.36
+- **Current Spend:** $526.40 (-6769.0%)
+- **Previous Spend:** $1,629.20
+- **Current Income:** $1,084.36 (-4.0%)
+- **Previous Income:** $1,089.75
+- **Spend Delta:** $-1,102.80
 
-<<<<<<< HEAD
-**Key metrics (WoW)**
-- Total Spend: $526.40 (-6769.0%)
-- Total Income: $1,084.36 (-4.0%)
-
-**Top drivers (this week)**
-- POS SIGNATURE PURCHASE: $432.44
-- ARCO: $58.86
-- DILO HOME: $21.36
-- APPLE CASH: $13.74
-
-**Risks**
-- anomaly: One spending anomaly detected this week.
-
-**Action items**
-- Review spending habits — est. weekly impact $200. Identifying unnecessary expenses could lead to further savings.
-=======
 ## Drivers
 - **Misc:** $432.44
 - **Gas:** $58.86
@@ -38,5 +17,7 @@ Weekly digest 9/1 - 9/7
 - **Uncategorized:** $13.74
 
 ## Risks
-- **anomaly:** 1 anomalies this week
->>>>>>> 09e4614 (u)
+- **anomaly:** One spending anomaly detected this week.
+
+## Recommendations
+- **Review Miscellaneous Spending** — est. $432. High spend in Misc category warrants review to identify potential savings.
