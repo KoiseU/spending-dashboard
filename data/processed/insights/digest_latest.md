@@ -18,4 +18,4 @@ Significant Reduction in Weekly Spending
 - anomaly: One spending anomaly detected this week.
 
 **Action items**
-- Review spending habits — est. weekly impact $200. Identifying unnecessary expenses could lead to further savings.
+- Maintain current spending habits — est. weekly impact $1,100. Continued reduction in spending can lead to significant savings.
