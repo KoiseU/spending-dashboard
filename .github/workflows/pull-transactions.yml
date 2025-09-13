@@ -48,11 +48,28 @@ jobs:
 
       - name: Commit outputs if changed
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/latest.csv config/merchants_dim.csv
+
+          # Always add latest.csv
+          git add data/raw/latest.csv
+
+          # Processed/enriched outputs (add if they exist)
+          [ -f data/processed/latest_enriched.csv ] && git add data/processed/latest_enriched.csv || true
+          [ -f data/processed/digest_latest.txt ] && git add data/processed/digest_latest.txt || true
+          [ -f data/processed/goal_nudges_latest.txt ] && git add data/processed/goal_nudges_latest.txt || true
+
+          # Insights (JSON/MD/CSV flatten)
+          if ls data/processed/insights/* 1> /dev/null 2>&1; then
+            git add data/processed/insights/*
+          fi
+
+          # merchants_dim.csv if it exists
+          [ -f config/merchants_dim.csv ] && git add config/merchants_dim.csv || true
+
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
+            git commit -m "Auto-update raw, processed & insights [skip ci]"
             git push
           else
             echo "No changes to commit."
