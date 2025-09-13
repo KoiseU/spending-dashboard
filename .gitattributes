@@ -1,0 +1,12 @@
+﻿# Generated insights
+data/processed/insights/*.md    merge=ours
+data/processed/insights/*.html  merge=ours
+data/processed/insights/*.csv   merge=ours
+data/processed/insights/*.json  merge=ours
+
+# Other generated artifacts
+data/raw/latest.csv                 merge=ours
+data/processed/latest_enriched.csv  merge=ours
+config/merchants_dim.csv            merge=ours
+vectorstore/*                       merge=ours
+*.parquet                           merge=ours
