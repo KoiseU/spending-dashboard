@@ -19,7 +19,7 @@
     "income_current": 1084.36,
     "income_previous": 1089.75
   },
-  "headline": "Significant Reduction in Weekly Spending",
+  "headline": "Significant Spending Reduction Achieved",
   "key_metrics": [
     {
       "name": "Total Spend",
@@ -59,7 +59,7 @@
   "action_items": [
     {
       "title": "Continue monitoring spending habits",
-      "impact_usd": 100,
+      "impact_usd": 200,
       "rationale": "To maintain reduced spending levels."
     }
   ],

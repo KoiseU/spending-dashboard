@@ -1,11 +1,11 @@
 row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd
-header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).,Spend (week),526.4,-0.6769,,,,
-summary,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).,,,,,,,
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,Total Spend,526.4,-67.69,,,,
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,Total Income,1084.36,-0.04,,,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,POS SIGNATURE PURCHASE,432.44,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,ARCO,58.86,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,DILO HOME,21.36,,
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,APPLE CASH,13.74,,
-risk,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,anomaly,,One spending anomaly detected.,
-action,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Reduction in Weekly Spending,,,,,Continue monitoring spending habits,,To maintain reduced spending levels.,100.0
+header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).,Spend (week),526.4,-0.6769,,,,
+summary,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).,,,,,,,
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,Total Spend,526.4,-67.69,,,,
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,Total Income,1084.36,-0.04,,,,
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,,,,POS SIGNATURE PURCHASE,432.44,,
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,,,,ARCO,58.86,,
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,,,,DILO HOME,21.36,,
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,,,,APPLE CASH,13.74,,
+risk,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,,,,anomaly,,One spending anomaly detected.,
+action,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Significant Spending Reduction Achieved,,,,,Continue monitoring spending habits,,To maintain reduced spending levels.,200.0

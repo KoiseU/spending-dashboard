@@ -1,5 +1,5 @@
 ## Weekly Digest: 2025-09-01-2025-09-07
-Significant Reduction in Weekly Spending
+Significant Spending Reduction Achieved
 
 2025-09-01-2025-09-07: Weekly spend $0 (WoW n/a). Top driver: POS SIGNATURE PURCHASE ($432).
 
@@ -18,4 +18,4 @@ Significant Reduction in Weekly Spending
 - anomaly: One spending anomaly detected.
 
 **Action items**
-- Continue monitoring spending habits — est. weekly impact $100. To maintain reduced spending levels.
+- Continue monitoring spending habits — est. weekly impact $200. To maintain reduced spending levels.
