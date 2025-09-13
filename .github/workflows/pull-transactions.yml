@@ -49,28 +49,48 @@ jobs:
       - name: Commit outputs if changed
         run: |
           set -euo pipefail
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Always add latest.csv
+          # Always add latest.csv (verified earlier)
           git add data/raw/latest.csv
 
-          # Processed/enriched outputs (add if they exist)
+          # Add merchants_dim.csv if present
+          if [ -f config/merchants_dim.csv ]; then
+            git add config/merchants_dim.csv
+          else
+            echo "No merchants_dim.csv to add."
+          fi
+
+          # Add processed artifacts we explicitly allow in .gitignore
+          # These may or may not exist on a given run; that's fine.
           [ -f data/processed/latest_enriched.csv ] && git add data/processed/latest_enriched.csv || true
           [ -f data/processed/digest_latest.txt ] && git add data/processed/digest_latest.txt || true
           [ -f data/processed/goal_nudges_latest.txt ] && git add data/processed/goal_nudges_latest.txt || true
 
-          # Insights (JSON/MD/CSV flatten)
-          if ls data/processed/insights/* 1> /dev/null 2>&1; then
-            git add data/processed/insights/*
-          fi
-
-          # merchants_dim.csv if it exists
-          [ -f config/merchants_dim.csv ] && git add config/merchants_dim.csv || true
+          # Weekly / Monthly insights (subjects + summaries + flats)
+          for f in \
+            data/processed/insights/wow_subject.csv \
+            data/processed/insights/wow_subject.txt \
+            data/processed/insights/wow_summary.md \
+            data/processed/insights/wow_summary.html \
+            data/processed/insights/mom_subject.csv \
+            data/processed/insights/mom_subject.txt \
+            data/processed/insights/mom_summary.md \
+            data/processed/insights/mom_summary.html \
+            data/processed/insights/digest_latest.json \
+            data/processed/insights/digest_latest.md \
+            data/processed/insights/digest_latest_flat.csv \
+            data/processed/insights/mom_flat.csv
+          do
+            [ -f "$f" ] && git add "$f" || true
+          done
 
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update raw, processed & insights [skip ci]"
+            git commit -m "Auto-update data & insights [skip ci]"
             git push
           else
             echo "No changes to commit."
+          fi
           fi
