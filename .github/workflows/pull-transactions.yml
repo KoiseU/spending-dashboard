@@ -80,37 +80,35 @@ jobs:
         run: |
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
-      - name: Commit outputs if changed
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+- name: Commit outputs if changed
+  run: |
+    set -euo pipefail
+    git config user.name "github-actions[bot]"
+    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Always add latest.csv (verified earlier)
-          git add data/raw/latest.csv
+    # Always add latest.csv
+    git add data/raw/latest.csv
 
-          # Add merchants_dim.csv if present
-          if [ -f config/merchants_dim.csv ]; then
-            git add config/merchants_dim.csv
-          else
-            echo "No merchants_dim.csv to add (AI mapping may have been skipped)."
-          fi
+    # merchants_dim.csv if present
+    [ -f config/merchants_dim.csv ] && git add config/merchants_dim.csv || true
 
-          # Add insights outputs if present (for Power BI / email body)
-          if [ -d data/processed/insights ]; then
-            git add data/processed/insights/digest_latest.json || true
-            git add data/processed/insights/digest_latest.md || true
-            git add data/processed/insights/digest_latest_flat.csv || true
-          fi
+    # insights artifacts (allowed by .gitignore exceptions you added)
+    [ -f data/processed/insights/digest_latest.json ] && git add data/processed/insights/digest_latest.json || true
+    [ -f data/processed/insights/digest_latest.md ] && git add data/processed/insights/digest_latest.md || true
+    [ -f data/processed/insights/digest_latest_flat.csv ] && git add data/processed/insights/digest_latest_flat.csv || true
 
-          # Optional: cache embeddings so semantic features persist
-          if [ -f vectorstore/embeddings.parquet ]; then
-            git add vectorstore/embeddings.parquet
-          fi
+    # Only add embeddings if NOT ignored (prevents 'ignored by .gitignore' failure)
+    if [ -f vectorstore/embeddings.parquet ]; then
+      if git check-ignore -q vectorstore/embeddings.parquet; then
+        echo "vectorstore/embeddings.parquet is gitignored; skipping."
+      else
+        git add vectorstore/embeddings.parquet
+      fi
+    fi
 
-          if ! git diff --staged --quiet; then
-            git commit -m "Auto-update latest & insights [skip ci]"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+    if git diff --staged --quiet; then
+      echo "No changes to commit."
+    else
+      git commit -m "Auto-update latest & insights [skip ci]"
+      git push
+    fi
