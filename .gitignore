@@ -20,10 +20,19 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# processed artifacts & vector stores
+# --- processed artifacts & vector stores ---
 data/processed/*
 !data/processed/.gitkeep
+
+# Allow weekly executive digest artifacts for Power BI
+!data/processed/insights/
+!data/processed/insights/digest_latest.json
+!data/processed/insights/digest_latest.md
+!data/processed/insights/digest_latest_flat.csv
+
+# Keep vector store out of git
 vectorstore/
 
+# misc
 scripts/.state/
 scripts/data/
