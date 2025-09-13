@@ -1,0 +1,90 @@
+{
+  "windows": {
+    "current": {
+      "start": "2025-09-01",
+      "end": "2025-09-07"
+    },
+    "previous": {
+      "start": "2025-08-25",
+      "end": "2025-08-31"
+    }
+  },
+  "health": {
+    "rows_total": 147,
+    "date_min": "2025-06-14 00:00:00",
+    "date_max": "2025-09-10 00:00:00",
+    "null_dates": 0,
+    "null_amounts": 0,
+    "has_display_name": true,
+    "null_display_name": 0
+  },
+  "totals": {
+    "expenses_are_negative": false,
+    "counts": {
+      "current_rows": 10,
+      "previous_rows": 16,
+      "neg_count_all": 34,
+      "pos_count_all": 113,
+      "zero_count_all": 0
+    },
+    "current": {
+      "spend": 1026.4,
+      "income": 1084.36,
+      "date_min": "2025-09-01 00:00:00",
+      "date_max": "2025-09-07 00:00:00"
+    },
+    "previous": {
+      "spend": 1629.2,
+      "income": 2089.75,
+      "date_min": "2025-08-25 00:00:00",
+      "date_max": "2025-08-29 00:00:00"
+    }
+  },
+  "top_merchants": [
+    {
+      "display_name": "WEALTHFRONT",
+      "spend_week": 500.0
+    },
+    {
+      "display_name": "POS SIGNATURE PURCHASE",
+      "spend_week": 432.44
+    },
+    {
+      "display_name": "ARCO",
+      "spend_week": 58.86
+    },
+    {
+      "display_name": "DILO HOME",
+      "spend_week": 21.36
+    },
+    {
+      "display_name": "APPLE CASH",
+      "spend_week": 13.74
+    }
+  ],
+  "top_categories": [
+    {
+      "category": "Finance",
+      "spend_week": 500.0
+    },
+    {
+      "category": "Misc",
+      "spend_week": 432.44
+    },
+    {
+      "category": "Gas",
+      "spend_week": 58.86
+    },
+    {
+      "category": "Shopping",
+      "spend_week": 21.36
+    },
+    {
+      "category": "Transfers",
+      "spend_week": 13.74
+    }
+  ],
+  "digest_probe": {
+    "error_reading_digest": "list index out of range"
+  }
+}

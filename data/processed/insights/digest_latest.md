@@ -10,7 +10,7 @@ Weekly digest 2025-09-01–2025-09-07
 - Misc: $432.44
 - Gas: $58.86
 - Shopping: $21.36
-- Transfers: $13.74
+- nan: $13.74
 
 **Risks**
 - anomaly: 1 anomalies this week
