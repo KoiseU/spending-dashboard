@@ -47,6 +47,7 @@ jobs:
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
       - name: Commit outputs if changed
+        shell: bash
         run: |
           set -euo pipefail
 
@@ -54,43 +55,41 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Always add latest.csv (verified earlier)
-          git add data/raw/latest.csv
+          git add -f data/raw/latest.csv
 
           # Add merchants_dim.csv if present
           if [ -f config/merchants_dim.csv ]; then
-            git add config/merchants_dim.csv
-          else
-            echo "No merchants_dim.csv to add."
+            git add -f config/merchants_dim.csv
           fi
 
-          # Add processed artifacts we explicitly allow in .gitignore
-          # These may or may not exist on a given run; that's fine.
-          [ -f data/processed/latest_enriched.csv ] && git add data/processed/latest_enriched.csv || true
-          [ -f data/processed/digest_latest.txt ] && git add data/processed/digest_latest.txt || true
-          [ -f data/processed/goal_nudges_latest.txt ] && git add data/processed/goal_nudges_latest.txt || true
-
-          # Weekly / Monthly insights (subjects + summaries + flats)
-          for f in \
-            data/processed/insights/wow_subject.csv \
-            data/processed/insights/wow_subject.txt \
-            data/processed/insights/wow_summary.md \
-            data/processed/insights/wow_summary.html \
-            data/processed/insights/mom_subject.csv \
-            data/processed/insights/mom_subject.txt \
-            data/processed/insights/mom_summary.md \
-            data/processed/insights/mom_summary.html \
-            data/processed/insights/digest_latest.json \
-            data/processed/insights/digest_latest.md \
-            data/processed/insights/digest_latest_flat.csv \
-            data/processed/insights/mom_flat.csv
-          do
-            [ -f "$f" ] && git add "$f" || true
+          # Optional processed/insight files (force-add to bypass any ignore edge cases)
+          files=(
+            "data/processed/latest_enriched.csv"
+            "data/processed/digest_latest.txt"
+            "data/processed/goal_nudges_latest.txt"
+            "data/processed/insights/wow_subject.csv"
+            "data/processed/insights/wow_subject.txt"
+            "data/processed/insights/wow_summary.md"
+            "data/processed/insights/wow_summary.html"
+            "data/processed/insights/mom_subject.csv"
+            "data/processed/insights/mom_subject.txt"
+            "data/processed/insights/mom_summary.md"
+            "data/processed/insights/mom_summary.html"
+            "data/processed/insights/digest_latest.json"
+            "data/processed/insights/digest_latest.md"
+            "data/processed/insights/digest_latest_flat.csv"
+            "data/processed/insights/mom_flat.csv"
+          )
+          for f in "${files[@]}"; do
+            if [ -f "$f" ]; then
+              git add -f "$f"
+            fi
           done
 
-          if ! git diff --staged --quiet; then
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
             git commit -m "Auto-update data & insights [skip ci]"
             git push
-          else
-            echo "No changes to commit."
           fi
           fi
