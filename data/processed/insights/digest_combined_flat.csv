@@ -1,0 +1,14 @@
+row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd,period
+header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,9/1 - 9/7: Weekly spend $526 (WoW -67.7%). Top driver: Uncategorized Expenses ($526).,Total Spend (WoW),526.4,-0.6769,,,,,WoW
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,Weekly Spend,526.4,-67.69,,,,,WoW
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,Weekly Income,1084.36,,,,,,WoW
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,MTD Spend,526.4,0.46,,,,,WoW
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,MTD Income,1084.36,-79.0,,,,,WoW
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,Anomalies Detected,1.0,,,,,,WoW
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,,,,Uncategorized Expenses,526.4,,,WoW
+risk,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,,,,anomaly,,One anomaly detected this week; further investigation needed.,,WoW
+header,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,"This month, spending has increased marginally by 0.46% compared to last month. Notably, income has seen a significant drop, which may impact future financial planning. Keep an eye on spending patterns as we move further into September.",Total Spend (MoM MTD),526.4,0.0046,,,,,MoM
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,Total Spend MTD,526.4,0.0046,,,,,MoM
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,Total Income MTD,1084.36,,,,,,MoM
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,,,,Uncategorized,526.4,,,MoM
+risk,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,,,,anomaly,,One spending anomaly detected this month.,,MoM

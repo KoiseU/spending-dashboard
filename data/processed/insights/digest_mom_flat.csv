@@ -1,3 +1,6 @@
-row_type,cur_start,cur_end,prev_start,prev_end,name,value,delta_pct,label,spend,note,impact_usd
-header,2025-08-01,2025-08-31,2025-07-01,2025-07-31,Spend (month),4067.79,0.2497,,,,
-driver,2025-08-01,2025-08-31,2025-07-01,2025-07-31,,,,nan,4067.79,,
+row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd
+header,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,"This month, spending has increased marginally by 0.46% compared to last month. Notably, income has seen a significant drop, which may impact future financial planning. Keep an eye on spending patterns as we move further into September.",Total Spend (MoM MTD),526.4,0.0046,,,,
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,Total Spend MTD,526.4,0.0046,,,,
+metric,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,Total Income MTD,1084.36,,,,,
+driver,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,,,,Uncategorized,526.4,,
+risk,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,,,,anomaly,,One spending anomaly detected this month.,

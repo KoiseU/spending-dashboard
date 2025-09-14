@@ -1,29 +1,58 @@
 {
+  "insights_version": 3,
   "window": {
     "current": {
-      "start": "2025-08-01",
-      "end": "2025-08-31",
-      "label": "Last completed month"
+      "start": "2025-09-01",
+      "end": "2025-09-07",
+      "label": "September MTD"
     },
     "previous": {
-      "start": "2025-07-01",
-      "end": "2025-07-31"
+      "start": "2025-08-01",
+      "end": "2025-08-07",
+      "label": "August MTD (aligned)"
     }
   },
   "totals": {
-    "spend_current": 4067.79,
-    "spend_previous": 3255.14,
-    "spend_delta": 812.65,
-    "spend_delta_pct": 0.2497,
-    "income_current": 8168.73,
-    "income_previous": 3907.11
+    "spend_mtd_current": 526.4,
+    "spend_mtd_previous": 524.0,
+    "spend_mtd_delta": 2.4,
+    "spend_mtd_delta_pct": 0.0046,
+    "income_mtd_current": 1084.36,
+    "income_mtd_previous": 5163.82
   },
-  "top_categories": [
+  "headline": "September Spending Surges Slightly",
+  "key_metrics": [
     {
-      "category": "nan",
-      "spend": 4067.79
+      "name": "Total Spend MTD",
+      "value": 526.4,
+      "delta_pct": 0.0046
+    },
+    {
+      "name": "Total Income MTD",
+      "value": 1084.36,
+      "delta_pct": null
     }
   ],
-  "subscriptions_count": 0,
-  "anomalies_count": 0
+  "top_drivers": [
+    {
+      "label": "Uncategorized",
+      "spend": 526.4
+    }
+  ],
+  "risks": [
+    {
+      "type": "anomaly",
+      "note": "One spending anomaly detected this month."
+    }
+  ],
+  "action_items": [
+    {
+      "title": "Review Spending Categories",
+      "impact_usd": 50,
+      "rationale": "Identifying and categorizing spending can help reduce unnecessary expenses."
+    }
+  ],
+  "theme": "Spending Shift",
+  "narrative": "This month, spending has increased marginally by 0.46% compared to last month. Notably, income has seen a significant drop, which may impact future financial planning. Keep an eye on spending patterns as we move further into September.",
+  "email_subject": "September Spending Insights: A Slight Increase"
 }
