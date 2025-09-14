@@ -4,7 +4,7 @@
 
 ## Key Metrics
 - **Total Spend:** $526.40 (-6769.0%)
-- **Total Income:** $1,084.36
+- **Total Income:** $1,084.36 (-4.0%)
 - **Spend Change:** $-1,102.80 (-6769.0%)
 - **Subscriptions Count:** $0.00
 - **Anomalies Count:** $1.00
@@ -13,7 +13,7 @@
 - **Uncategorized:** $526
 
 ## Risks
-- **anomaly:** One financial anomaly detected this week.
+- **anomaly:** One anomaly detected in spending patterns.
 
 ## Recommendations
-- **Review Spending Categories** — est. $200. To better categorize spending and identify potential savings.
+- **Review Spending Categories** — est. $0. To better categorize and understand spending behavior.
