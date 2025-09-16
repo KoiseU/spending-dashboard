@@ -2,39 +2,34 @@
   "insights_version": 2,
   "window": {
     "current": {
-      "start": "2025-09-01",
-      "end": "2025-09-07",
+      "start": "2025-09-08",
+      "end": "2025-09-14",
       "label": "Last completed week (Mon–Sun)"
     },
     "previous": {
-      "start": "2025-08-25",
-      "end": "2025-08-31"
+      "start": "2025-09-01",
+      "end": "2025-09-07"
     }
   },
   "totals": {
-    "spend_current": 526.4,
-    "spend_previous": 1629.2,
-    "spend_delta": -1102.8,
-    "spend_delta_pct": -0.6769,
-    "income_current": 1084.36,
-    "income_previous": 1089.75
+    "spend_current": 1438.09,
+    "spend_previous": 526.4,
+    "spend_delta": 911.69,
+    "spend_delta_pct": 1.7319,
+    "income_current": 1.0,
+    "income_previous": 1084.36
   },
   "headline": "Weekly Financial Overview",
   "key_metrics": [
     {
       "name": "Total Spend",
-      "value": 526.4,
-      "delta_pct": -67.69
+      "value": 1438.09,
+      "delta_pct": 171.31
     },
     {
       "name": "Total Income",
-      "value": 1084.36,
-      "delta_pct": null
-    },
-    {
-      "name": "Spend Change",
-      "value": -1102.8,
-      "delta_pct": -67.69
+      "value": 1.0,
+      "delta_pct": -99.91
     },
     {
       "name": "Subscriptions Count",
@@ -43,28 +38,17 @@
     },
     {
       "name": "Anomalies Count",
-      "value": 1,
+      "value": 0,
       "delta_pct": null
     }
   ],
   "top_drivers": [
     {
       "label": "Uncategorized",
-      "spend": 526.4
+      "spend": 1438.09
     }
   ],
-  "risks": [
-    {
-      "type": "anomaly",
-      "note": "One anomaly detected in spending patterns."
-    }
-  ],
-  "action_items": [
-    {
-      "title": "Review Spending Categories",
-      "impact_usd": 200,
-      "rationale": "To better categorize and control spending."
-    }
-  ],
-  "summary": "9/1 - 9/7: Weekly spend $0 (WoW n/a). Top driver: Uncategorized ($526)."
+  "risks": [],
+  "action_items": [],
+  "summary": "9/8 - 9/14: Weekly spend $0 (WoW n/a). Top driver: Uncategorized ($1,438)."
 }
