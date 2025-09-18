@@ -7,3 +7,5 @@
 - **Delta:** $812.65
 ## Drivers
 - **nan:** $4,068
+## Risks
+- **Anomalies:** 1 flagged
