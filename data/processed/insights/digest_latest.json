@@ -1,5 +1,5 @@
 {
-  "insights_version": 2,
+  "insights_version": 3,
   "window": {
     "current": {
       "start": "2025-09-08",
@@ -12,48 +12,80 @@
     }
   },
   "totals": {
-    "spend_current": 1424.19,
+    "spend_current": 142.19,
     "spend_previous": 526.4,
-    "spend_delta": 897.79,
-    "spend_delta_pct": 1.7055,
-    "income_current": 1424.19,
-    "income_previous": 1084.36
+    "spend_delta": -384.21,
+    "spend_delta_pct": -0.7299,
+    "income_current": 0.0,
+    "income_previous": 1084.36,
+    "spend_mtd_current": 668.59,
+    "spend_mtd_previous": 890.15,
+    "spend_mtd_delta": -221.56,
+    "spend_mtd_delta_pct": -0.2489,
+    "income_mtd_current": 1084.36,
+    "income_mtd_previous": 275.0
   },
-  "headline": "Weekly Financial Overview",
+  "headline": "Significant Reduction in Weekly Spending",
   "key_metrics": [
     {
-      "name": "Total Spend",
-      "value": 1424.19,
-      "delta_pct": 1.7055
+      "name": "Weekly Spend",
+      "value": 142.19,
+      "delta_pct": -72.99
     },
     {
-      "name": "Total Income",
-      "value": 1424.19,
-      "delta_pct": 31.4
+      "name": "Monthly Spend to Date",
+      "value": 668.59,
+      "delta_pct": -24.89
     },
     {
-      "name": "Previous Week Spend",
-      "value": 526.4,
-      "delta_pct": -897.79
+      "name": "Income Current Week",
+      "value": 0.0,
+      "delta_pct": null
     },
     {
-      "name": "Previous Week Income",
+      "name": "Income Month to Date",
       "value": 1084.36,
-      "delta_pct": 31.4
+      "delta_pct": 295.78
     },
     {
-      "name": "Subscriptions Count",
-      "value": 0,
+      "name": "Previous Weekly Spend",
+      "value": 526.4,
       "delta_pct": null
     }
   ],
   "top_drivers": [
     {
-      "label": "Uncategorized",
-      "spend": 1424.19
+      "label": "Transfers",
+      "spend": 65.74
+    },
+    {
+      "label": "Services",
+      "spend": 60.0
+    },
+    {
+      "label": "Shopping",
+      "spend": 11.06
+    },
+    {
+      "label": "Home Improvement",
+      "spend": 5.39
     }
   ],
   "risks": [],
-  "action_items": [],
-  "summary": "9/8 - 9/14: Weekly spend $0 (WoW n/a). Top driver: Uncategorized ($1,424)."
+  "action_items": [
+    {
+      "title": "Continue Monitoring Spending",
+      "impact_usd": 50,
+      "rationale": "To maintain the current spending reduction trend and identify further savings opportunities."
+    },
+    {
+      "title": "Evaluate Service Subscriptions",
+      "impact_usd": 30,
+      "rationale": "To ensure no unnecessary services are being paid for, potentially increasing savings."
+    }
+  ],
+  "theme": "Cost Management",
+  "narrative": "This week saw a remarkable decrease in spending, with a reduction of over $384 compared to the previous week. This trend is reflected in both weekly and month-to-date spending metrics, indicating effective cost management strategies.",
+  "email_subject": "Weekly Financial Overview: Spending Down Significantly",
+  "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
 }

@@ -1,22 +1,22 @@
 # Monthly Executive Summary (September MTD)
 *Cost Efficiency*
 
-In September, we have seen a notable reduction in spending compared to August, with a decrease of over 23%. This improvement is primarily driven by lower expenditures in shopping and services. Additionally, income has increased significantly, indicating a positive financial trend.
+This month, we have successfully reduced our spending by 24.89% compared to the same period last month, resulting in a total savings of $221.56. Our income has also seen a substantial increase, indicating improved financial health.
 
 ## Key Metrics (MoM)
-- **Total Spend MTD:** $682.49 (-23.3%)
-- **Total Income MTD:** $1,085.36
+- **Total Spend:** $668.59 (-24.9%)
+- **Total Income:** $1,084.36
 
 ## Drivers (MTD)
-- **Shopping:** $466
-- **Transfers:** $92
+- **Shopping:** $465
+- **Transfers:** $79
 - **Services:** $60
 - **Transportation:** $59
 - **Home Improvement:** $5
 
 ## Risks
-- **anomaly:** One anomaly detected in spending patterns this month.
+- **anomaly:** One spending anomaly detected this month.
 
 ## Recommendations
-- **Review Shopping Expenses** — est. $50. Further reduction in shopping expenses could enhance overall savings.
-- **Monitor Service Subscriptions** — est. $20. Ensure no unnecessary services are being paid for, as current subscriptions are at zero.
+- **Review Shopping Expenses** — est. $50. Identifying non-essential purchases could lead to further savings.
+- **Monitor Transportation Costs** — est. $30. Exploring alternative transport options may reduce expenses.

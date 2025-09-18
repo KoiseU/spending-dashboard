@@ -1,14 +1,21 @@
 # Weekly Executive Summary (9/8 - 9/14)
-Weekly Financial Overview
+*Cost Management*
 
-9/8 - 9/14: Weekly spend $0 (WoW n/a). Top driver: Uncategorized ($1,424).
+This week saw a remarkable decrease in spending, with a reduction of over $384 compared to the previous week. This trend is reflected in both weekly and month-to-date spending metrics, indicating effective cost management strategies.
 
 ## Key Metrics
-- **Total Spend:** $1,424.19 (+170.6%)
-- **Total Income:** $1,424.19 (+3140.0%)
-- **Previous Week Spend:** $526.40 (-89779.0%)
-- **Previous Week Income:** $1,084.36 (+3140.0%)
-- **Subscriptions Count:** $0.00
+- **Weekly Spend:** $142.19 (-73.0%)
+- **Monthly Spend to Date:** $668.59 (-24.9%)
+- **Income Current Week:** $0.00
+- **Income Month to Date:** $1,084.36 (+295.8%)
+- **Previous Weekly Spend:** $526.40
 
 ## Drivers
-- **Uncategorized:** $1,424.19
+- **Transfers:** $66
+- **Services:** $60
+- **Shopping:** $11
+- **Home Improvement:** $5
+
+## Recommendations
+- **Continue Monitoring Spending** — est. $50. To maintain the current spending reduction trend and identify further savings opportunities.
+- **Evaluate Service Subscriptions** — est. $30. To ensure no unnecessary services are being paid for, potentially increasing savings.
