@@ -1,12 +1,12 @@
 # Monthly Executive Summary (September MTD)
-*Cost Efficiency*
+*Cost Management*
 
-In September, we observed a substantial decrease in spending compared to August, with a reduction of approximately 24.9%. This positive trend is primarily driven by lower expenditures in shopping and services, indicating effective cost management strategies. Additionally, income has seen a remarkable increase, suggesting improved financial health.
+In September, we have seen a notable reduction in spending compared to August, with a decrease of approximately 24.9%. This improvement is primarily driven by lower expenditures in shopping and services. Additionally, income has significantly increased, indicating a positive cash flow situation.
 
 ## Key Metrics (MoM)
-- **Total Spend:** $668.59 (-24.9%)
-- **Total Income:** $1,084.36
-- **Spending Change:** $-221.56 (-24.9%)
+- **Total Spend MTD:** $668.59 (-24.9%)
+- **Total Income MTD:** $1,084.36
+- **Spending Reduction:** $221.56 (-24.9%)
 
 ## Drivers (MTD)
 - **Shopping:** $465
@@ -19,5 +19,5 @@ In September, we observed a substantial decrease in spending compared to August,
 - **anomaly:** One anomaly detected in spending patterns this month.
 
 ## Recommendations
-- **Continue Monitoring Shopping Expenses** — est. $50. Maintain focus on reducing shopping expenses to sustain savings.
-- **Evaluate Service Subscriptions** — est. $30. Assess necessity of services to further cut costs.
+- **Review Shopping Expenses** — est. $50. Continued monitoring of shopping expenses could yield further savings.
+- **Evaluate Service Subscriptions** — est. $30. Assessing service subscriptions may uncover unnecessary costs.

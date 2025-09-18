@@ -1,14 +1,12 @@
 # Weekly Executive Summary (9/8 - 9/14)
 *Cost Management*
 
-In the last completed week, spending decreased dramatically by over 72% compared to the previous week, indicating effective cost management strategies. Month-to-date spending also shows a notable reduction, suggesting a sustained effort in controlling expenses.
+This week saw a remarkable decrease in spending, dropping by over 70% compared to the previous week. This trend is encouraging as it indicates effective cost management strategies are being implemented.
 
 ## Key Metrics
-- **Weekly Spend:** $142.19 (-72.9%)
+- **Weekly Spend:** $142.19 (-73.0%)
 - **Monthly Spend to Date:** $668.59 (-24.9%)
-- **Income Previous Week:** $1,084.36
-- **Income Month to Date:** $1,084.36
-- **Previous Weekly Spend:** $526.40
+- **Income This Month:** $1,084.36
 
 ## Drivers
 - **Transfers:** $66
@@ -17,5 +15,5 @@ In the last completed week, spending decreased dramatically by over 72% compared
 - **Home Improvement:** $5
 
 ## Recommendations
-- **Continue Monitoring Spending** — est. $50. Sustaining the current spending levels can lead to significant savings over time.
-- **Evaluate Service Subscriptions** — est. $30. Reviewing service subscriptions can help identify further savings opportunities.
+- **Continue Monitoring Spending Patterns** — est. $50. To maintain the current spending reduction and identify further savings opportunities.
+- **Evaluate Necessity of Services** — est. $30. Assess if all service subscriptions are essential to further reduce costs.

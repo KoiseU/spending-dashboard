@@ -30,26 +30,16 @@
     {
       "name": "Weekly Spend",
       "value": 142.19,
-      "delta_pct": -72.9
+      "delta_pct": -72.99
     },
     {
       "name": "Monthly Spend to Date",
       "value": 668.59,
-      "delta_pct": -24.9
+      "delta_pct": -24.89
     },
     {
-      "name": "Income Previous Week",
+      "name": "Income This Month",
       "value": 1084.36,
-      "delta_pct": null
-    },
-    {
-      "name": "Income Month to Date",
-      "value": 1084.36,
-      "delta_pct": null
-    },
-    {
-      "name": "Previous Weekly Spend",
-      "value": 526.4,
       "delta_pct": null
     }
   ],
@@ -74,18 +64,18 @@
   "risks": [],
   "action_items": [
     {
-      "title": "Continue Monitoring Spending",
+      "title": "Continue Monitoring Spending Patterns",
       "impact_usd": 50,
-      "rationale": "Sustaining the current spending levels can lead to significant savings over time."
+      "rationale": "To maintain the current spending reduction and identify further savings opportunities."
     },
     {
-      "title": "Evaluate Service Subscriptions",
+      "title": "Evaluate Necessity of Services",
       "impact_usd": 30,
-      "rationale": "Reviewing service subscriptions can help identify further savings opportunities."
+      "rationale": "Assess if all service subscriptions are essential to further reduce costs."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "In the last completed week, spending decreased dramatically by over 72% compared to the previous week, indicating effective cost management strategies. Month-to-date spending also shows a notable reduction, suggesting a sustained effort in controlling expenses.",
-  "email_subject": "Weekly Financial Overview: Major Spending Reduction Achieved",
+  "narrative": "This week saw a remarkable decrease in spending, dropping by over 70% compared to the previous week. This trend is encouraging as it indicates effective cost management strategies are being implemented.",
+  "email_subject": "Weekly Spending Report: Major Savings Achieved",
   "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
 }
