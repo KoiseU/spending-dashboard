@@ -1,14 +1,19 @@
 row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd,period
-header,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,9/1 - 9/7: Weekly spend $526 (WoW -67.7%). Top driver: Uncategorized Expenses ($526).,Total Spend (WoW),526.4,-0.6769,,,,,WoW
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,Weekly Spend,526.4,-67.69,,,,,WoW
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,Weekly Income,1084.36,,,,,,WoW
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,MTD Spend,526.4,0.46,,,,,WoW
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,MTD Income,1084.36,-79.0,,,,,WoW
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,Anomalies Detected,1.0,,,,,,WoW
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,,,,Uncategorized Expenses,526.4,,,WoW
-risk,2025-09-07,2025-09-01,2025-09-07,2025-08-25,2025-08-31,Spending Takes a Dive!,,,,,anomaly,,One anomaly detected this week; further investigation needed.,,WoW
-header,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,"This month, spending has increased marginally by 0.46% compared to last month. Notably, income has seen a significant drop, which may impact future financial planning. Keep an eye on spending patterns as we move further into September.",Total Spend (MoM MTD),526.4,0.0046,,,,,MoM
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,Total Spend MTD,526.4,0.0046,,,,,MoM
-metric,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,Total Income MTD,1084.36,,,,,,MoM
-driver,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,,,,Uncategorized,526.4,,,MoM
-risk,2025-09-07,2025-09-01,2025-09-07,2025-08-01,2025-08-07,September Spending Surges Slightly,,,,,anomaly,,One spending anomaly detected this month.,,MoM
+header,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,9/8 - 9/14: Weekly spend $156 (WoW -70.3%). Top driver: Transfers ($79).,Total Spend (WoW),156.09,-0.7035,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Weekly Spend,156.09,-70.35,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Monthly Spend to Date,682.49,-23.33,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Current Income,1.0,,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Previous Income,1084.36,,,,,,WoW
+driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Transfers,78.64,,,WoW
+driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Services,60.0,,,WoW
+driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Shopping,12.06,,,WoW
+driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Home Improvement,5.39,,,WoW
+header,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,"In September, we have seen a notable reduction in spending compared to August, with a decrease of over 23%. This improvement is primarily driven by lower expenditures in shopping and services. Additionally, income has increased significantly, indicating a positive financial trend.",Total Spend (MoM MTD),682.49,-0.2333,,,,,MoM
+metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,Total Spend MTD,682.49,-23.33,,,,,MoM
+metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,Total Income MTD,1085.36,,,,,,MoM
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Shopping,465.86,,,MoM
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Transfers,92.38,,,MoM
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Services,60.0,,,MoM
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Transportation,58.86,,,MoM
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Home Improvement,5.39,,,MoM
+risk,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,anomaly,,One anomaly detected in spending patterns this month.,,MoM

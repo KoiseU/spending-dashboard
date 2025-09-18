@@ -1,2 +1,6 @@
 Goal: Save $1,000 next 30 days
+<<<<<<< HEAD
 - Cut nan by 17%
+=======
+- Cut Debt Payments by 35%
+>>>>>>> cf563f9 (u)

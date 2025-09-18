@@ -1,3 +1,10 @@
-row_type,cur_start,cur_end,prev_start,prev_end,name,value,delta_pct,label,spend,note,impact_usd
-header,2025-08-01,2025-08-31,2025-07-01,2025-07-31,Spend (month),4067.79,0.2497,,,,
-driver,2025-08-01,2025-08-31,2025-07-01,2025-07-31,,,,nan,4067.79,,
+row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd
+header,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,"In September, we have seen a notable reduction in spending compared to August, with a decrease of over 23%. This improvement is primarily driven by lower expenditures in shopping and services. Additionally, income has increased significantly, indicating a positive financial trend.",Total Spend (MoM MTD),682.49,-0.2333,,,,
+metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,Total Spend MTD,682.49,-23.33,,,,
+metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,Total Income MTD,1085.36,,,,,
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Shopping,465.86,,
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Transfers,92.38,,
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Services,60.0,,
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Transportation,58.86,,
+driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,Home Improvement,5.39,,
+risk,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,September Spending Shows Significant Improvement,,,,,anomaly,,One anomaly detected in spending patterns this month.,
