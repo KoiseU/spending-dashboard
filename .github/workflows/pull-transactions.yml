@@ -15,46 +15,28 @@ jobs:
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-
-      # Azure keys (optional; AI cells no-op if unset)
+      # Azure keys optional; AI cells no-op if unset
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
       AZURE_OPENAI_EMBEDDINGS: ${{ secrets.AZURE_OPENAI_EMBEDDINGS }}
       AZURE_OPENAI_API_VERSION: 2024-02-15-preview
-      EMAIL_ENABLED:1
-
-      # Make LA timezone available for pandas date math
-      TZ: America/Los_Angeles
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-          cache-dependency-path: |
-            requirements.txt
 
       - name: Install deps
         run: |
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install papermill ipykernel matplotlib
+          pip install papermill ipykernel
 
       - name: Prepare runtime state
         run: |
           mkdir -p .state
-          printf "%s" "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
-          [ -f .state/plaid_cursors.json ] || echo "{}" > .state/plaid_cursors.json
-          # Kill switch for email in CI (notebook also checks EMAIL_ENABLED)
-          [ "${EMAIL_ENABLED}" = "0" ] && : > .state/EMAIL_KILL || true
+          echo "${PLAID_ACCESS_TOKENS}" > .state/access_tokens.json
+          if [ ! -f .state/plaid_cursors.json ]; then echo "{}" > .state/plaid_cursors.json; fi
 
       - name: Run build notebook
         run: |
@@ -64,45 +46,13 @@ jobs:
         run: |
           papermill scripts/enrich_transactions.ipynb scripts/enrich_transactions.ipynb
 
-      - name: Show outputs (debug)
-        run: |
-          echo "::group::Tree"
-          ls -la
-          echo
-          echo "data/raw:"
-          ls -la data/raw || true
-          echo
-          echo "data/processed:"
-          ls -la data/processed || true
-          echo
-          echo "insights:"
-          ls -la data/processed/insights || true
-          echo "::endgroup::"
-
       - name: Commit outputs if changed
         run: |
-          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Always add latest.csv
-          git add data/raw/latest.csv
-
-          # Processed/enriched outputs (add if they exist)
-          [ -f data/processed/latest_enriched.csv ] && git add data/processed/latest_enriched.csv || true
-          [ -f data/processed/digest_latest.txt ] && git add data/processed/digest_latest.txt || true
-          [ -f data/processed/goal_nudges_latest.txt ] && git add data/processed/goal_nudges_latest.txt || true
-
-          # Insights (JSON/MD/CSV/PNG)
-          if ls data/processed/insights/* 1> /dev/null 2>&1; then
-            git add data/processed/insights/*
-          fi
-
-          # merchants_dim.csv if it exists
-          [ -f config/merchants_dim.csv ] && git add config/merchants_dim.csv || true
-
+          git add data/raw/latest.csv config/merchants_dim.csv
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update raw, processed & insights [skip ci]"
+            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
             git push
           else
             echo "No changes to commit."
