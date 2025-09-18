@@ -35,8 +35,6 @@ jobs:
       EMAIL_TO: ${{ secrets.EMAIL_TO }}
       EMAIL_CC: ${{ secrets.EMAIL_CC }}
       EMAIL_BCC: ${{ secrets.EMAIL_BCC }}
-      EMAIL_DRY_RUN: "1"
-      EMAIL_STRICT: "0"
 
     steps:
       - name: Checkout
