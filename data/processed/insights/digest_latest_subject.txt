@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Weekly Spending Report: Major Savings Achieved
-=======
-Weekly Financial Overview: Major Spending Reduction
->>>>>>> e1443a2 (u)
+Weekly Financial Summary: Major Spending Reduction Achieved
