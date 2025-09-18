@@ -1,20 +1,21 @@
 row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd,period
 header,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66).,Total Spend (WoW),142.19,-0.7299,,,,,WoW
-metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Weekly Spend,142.19,-72.99,,,,,WoW
-metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Monthly Spend to Date,668.59,-24.89,,,,,WoW
-metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Income Current Week,0.0,,,,,,WoW
-metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Income Month to Date,1084.36,295.78,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Weekly Spend,142.19,-72.9,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Monthly Spend to Date,668.59,-24.9,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Income Previous Week,1084.36,,,,,,WoW
+metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Income Month to Date,1084.36,,,,,,WoW
 metric,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,Previous Weekly Spend,526.4,,,,,,WoW
 driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Transfers,65.74,,,WoW
 driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Services,60.0,,,WoW
 driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Shopping,11.06,,,WoW
 driver,2025-09-14,2025-09-08,2025-09-14,2025-09-01,2025-09-07,Significant Reduction in Weekly Spending,,,,,Home Improvement,5.39,,,WoW
-header,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,"This month, we have successfully reduced our spending by 24.89% compared to the same period last month, resulting in a total savings of $221.56. Our income has also seen a substantial increase, indicating improved financial health.",Total Spend (MoM MTD),668.59,-0.2489,,,,,MoM
+header,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,"In September, we observed a substantial decrease in spending compared to August, with a reduction of approximately 24.9%. This positive trend is primarily driven by lower expenditures in shopping and services, indicating effective cost management strategies. Additionally, income has seen a remarkable increase, suggesting improved financial health.",Total Spend (MoM MTD),668.59,-0.2489,,,,,MoM
 metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,Total Spend,668.59,-24.89,,,,,MoM
 metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,Total Income,1084.36,,,,,,MoM
+metric,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,Spending Change,-221.56,-24.89,,,,,MoM
 driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,Shopping,464.86,,,MoM
 driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,Transfers,79.48,,,MoM
 driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,Services,60.0,,,MoM
 driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,Transportation,58.86,,,MoM
 driver,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,Home Improvement,5.39,,,MoM
-risk,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,anomaly,,One spending anomaly detected this month.,,MoM
+risk,2025-09-14,2025-09-01,2025-09-14,2025-08-01,2025-08-14,Significant Spending Reduction in September,,,,,anomaly,,One anomaly detected in spending patterns this month.,,MoM

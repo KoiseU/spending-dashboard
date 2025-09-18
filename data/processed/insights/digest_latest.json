@@ -30,22 +30,22 @@
     {
       "name": "Weekly Spend",
       "value": 142.19,
-      "delta_pct": -72.99
+      "delta_pct": -72.9
     },
     {
       "name": "Monthly Spend to Date",
       "value": 668.59,
-      "delta_pct": -24.89
+      "delta_pct": -24.9
     },
     {
-      "name": "Income Current Week",
-      "value": 0.0,
+      "name": "Income Previous Week",
+      "value": 1084.36,
       "delta_pct": null
     },
     {
       "name": "Income Month to Date",
       "value": 1084.36,
-      "delta_pct": 295.78
+      "delta_pct": null
     },
     {
       "name": "Previous Weekly Spend",
@@ -76,16 +76,16 @@
     {
       "title": "Continue Monitoring Spending",
       "impact_usd": 50,
-      "rationale": "To maintain the current spending reduction trend and identify further savings opportunities."
+      "rationale": "Sustaining the current spending levels can lead to significant savings over time."
     },
     {
       "title": "Evaluate Service Subscriptions",
       "impact_usd": 30,
-      "rationale": "To ensure no unnecessary services are being paid for, potentially increasing savings."
+      "rationale": "Reviewing service subscriptions can help identify further savings opportunities."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "This week saw a remarkable decrease in spending, with a reduction of over $384 compared to the previous week. This trend is reflected in both weekly and month-to-date spending metrics, indicating effective cost management strategies.",
-  "email_subject": "Weekly Financial Overview: Spending Down Significantly",
+  "narrative": "In the last completed week, spending decreased dramatically by over 72% compared to the previous week, indicating effective cost management strategies. Month-to-date spending also shows a notable reduction, suggesting a sustained effort in controlling expenses.",
+  "email_subject": "Weekly Financial Overview: Major Spending Reduction Achieved",
   "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
 }

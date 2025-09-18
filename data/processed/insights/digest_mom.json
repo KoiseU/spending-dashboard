@@ -31,6 +31,11 @@
       "name": "Total Income",
       "value": 1084.36,
       "delta_pct": null
+    },
+    {
+      "name": "Spending Change",
+      "value": -221.56,
+      "delta_pct": -24.89
     }
   ],
   "top_drivers": [
@@ -58,22 +63,22 @@
   "risks": [
     {
       "type": "anomaly",
-      "note": "One spending anomaly detected this month."
+      "note": "One anomaly detected in spending patterns this month."
     }
   ],
   "action_items": [
     {
-      "title": "Review Shopping Expenses",
+      "title": "Continue Monitoring Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "Identifying non-essential purchases could lead to further savings."
+      "rationale": "Maintain focus on reducing shopping expenses to sustain savings."
     },
     {
-      "title": "Monitor Transportation Costs",
+      "title": "Evaluate Service Subscriptions",
       "impact_usd": 30,
-      "rationale": "Exploring alternative transport options may reduce expenses."
+      "rationale": "Assess necessity of services to further cut costs."
     }
   ],
   "theme": "Cost Efficiency",
-  "narrative": "This month, we have successfully reduced our spending by 24.89% compared to the same period last month, resulting in a total savings of $221.56. Our income has also seen a substantial increase, indicating improved financial health.",
+  "narrative": "In September, we observed a substantial decrease in spending compared to August, with a reduction of approximately 24.9%. This positive trend is primarily driven by lower expenditures in shopping and services, indicating effective cost management strategies. Additionally, income has seen a remarkable increase, suggesting improved financial health.",
   "email_subject": "September Financial Overview: Spending Down, Income Up!"
 }
