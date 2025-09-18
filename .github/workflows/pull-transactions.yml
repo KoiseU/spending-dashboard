@@ -10,32 +10,31 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
-      PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
-      PLAID_ENV: ${{ secrets.PLAID_ENV }}
-      PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
-      OUTPUT_DIR: data/raw
+      PLAID_CLIENT_ID:${{ secrets.PLAID_CLIENT_ID }}
+      PLAID_SECRET:${{ secrets.PLAID_SECRET }}
+      PLAID_ENV:${{ secrets.PLAID_ENV }}
+      PLAID_ACCESS_TOKENS:${{ secrets.PLAID_ACCESS_TOKENS }}
+      OUTPUT_DIR:data/raw
 
       # Azure (optional)
-      AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
-      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
-      AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
-      AZURE_OPENAI_EMBEDDINGS: ${{ secrets.AZURE_OPENAI_EMBEDDINGS }}
-      AZURE_OPENAI_API_VERSION: 2024-02-15-preview
+      AZURE_OPENAI_ENDPOINT:${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_API_KEY:${{ secrets.AZURE_OPENAI_API_KEY }}
+      AZURE_OPENAI_DEPLOYMENT:${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
+      AZURE_OPENAI_EMBEDDINGS:${{ secrets.AZURE_OPENAI_EMBEDDINGS }}
+      AZURE_OPENAI_API_VERSION:2024-02-15-preview
 
       # Email (required for send step)
-      SMTP_HOST: ${{ secrets.SMTP_HOST }}
-      SMTP_PORT: ${{ secrets.SMTP_PORT }}
-      SMTP_SSL_PORT: ${{ secrets.SMTP_SSL_PORT }}
-      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-      SMTP_STARTTLS: ${{ secrets.SMTP_STARTTLS }}
-      EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-      EMAIL_TO: ${{ secrets.EMAIL_TO }}
-      EMAIL_CC: ${{ secrets.EMAIL_CC }}
-      EMAIL_BCC: ${{ secrets.EMAIL_BCC }}
+      SMTP_HOST:${{ secrets.SMTP_HOST }}
+      SMTP_PORT:${{ secrets.SMTP_PORT }}
+      SMTP_SSL_PORT:${{ secrets.SMTP_SSL_PORT }}
+      SMTP_USERNAME:${{ secrets.SMTP_USERNAME }}
+      SMTP_PASSWORD:${{ secrets.SMTP_PASSWORD }}
+      SMTP_STARTTLS:${{ secrets.SMTP_STARTTLS }}
+      EMAIL_FROM:${{ secrets.EMAIL_FROM }}
+      EMAIL_TO:${{ secrets.EMAIL_TO }}
+      EMAIL_CC:${{ secrets.EMAIL_CC }}
+      EMAIL_BCC:${{ secrets.EMAIL_BCC }}
 
-      # Timezone for date logic
       TZ: America/Los_Angeles
 
     steps:
