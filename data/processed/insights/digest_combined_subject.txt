@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Weekly Financial Overview: Spending Down Over 70% | September Financial Overview: Spending Down, Income Up!
+=======
+Weekly Financial Overview: Major Spending Reduction Achieved | September Financial Overview: Spending Down, Income Up!
+>>>>>>> 0166d19 (u)
