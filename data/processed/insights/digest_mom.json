@@ -20,7 +20,7 @@
     "income_mtd_current": 1084.36,
     "income_mtd_previous": 275.0
   },
-  "headline": "September Spending Shows Significant Improvement",
+  "headline": "Significant Reduction in Spending This Month",
   "key_metrics": [
     {
       "name": "Total Spend MTD",
@@ -58,22 +58,22 @@
   "risks": [
     {
       "type": "anomaly",
-      "note": "One anomaly detected in spending patterns."
+      "note": "One anomaly detected in spending patterns this month."
     }
   ],
   "action_items": [
     {
-      "title": "Review Shopping Expenses",
+      "title": "Continue Monitoring Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "Identifying non-essential purchases could lead to further savings."
+      "rationale": "To maintain the downward trend in spending, focus on essential purchases only."
     },
     {
-      "title": "Monitor Transportation Costs",
+      "title": "Evaluate Service Subscriptions",
       "impact_usd": 20,
-      "rationale": "Optimizing transportation can contribute to overall spending reduction."
+      "rationale": "With no subscriptions currently, consider potential savings from unnecessary services."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "In September, spending has decreased significantly compared to August, with a reduction of approximately 22.5%. This positive trend is supported by a substantial increase in income, indicating improved financial health.",
-  "email_subject": "September Financial Overview: Positive Trends and Actionable Insights"
+  "narrative": "In September, we have observed a notable decrease in spending compared to August, with a reduction of approximately 22.5%. This positive trend is primarily driven by lower expenditures in shopping and services. Additionally, income has seen a substantial increase, indicating improved financial health.",
+  "email_subject": "September Financial Overview: Spending Down, Income Up!"
 }

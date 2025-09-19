@@ -1,4 +1,4 @@
 Period: last 30 days vs prior 30
-Spend: $6,147.83 (+2,267.52 vs prior)
-Top 3 merchants: Petal ($2,164.88), Withdrawal AMEX EPAYMENT / TYPE: ACH PMT ID: 0005000008 DATA: ER AM CO: AMEX EPAYMENT NAME: KOSISONNA UGOCHUKWU %% ACH ECC WEB %% ACH Trace 091000011489512 ($777.78), Withdrawal ALLY / TYPE: ALLY PAYMT ID: 9833122002 CO: ALLY NAME: Kosisonna Ugochukw %% ACH ECC WEB %% ACH Trace 021000020976652 ($504.22)
-Biggest category driver: Debt Payments ($4,576.53)
+Spend: $5,434.87 (+1,554.56 vs prior)
+Top 3 merchants: Petal ($1,451.92), Withdrawal AMEX EPAYMENT / TYPE: ACH PMT ID: 0005000008 DATA: ER AM CO: AMEX EPAYMENT NAME: KOSISONNA UGOCHUKWU %% ACH ECC WEB %% ACH Trace 091000011489512 ($777.78), Withdrawal ALLY / TYPE: ALLY PAYMT ID: 9833122002 CO: ALLY NAME: Kosisonna Ugochukw %% ACH ECC WEB %% ACH Trace 021000020976652 ($504.22)
+Biggest category driver: Debt Payments ($3,863.57)
