@@ -38,19 +38,19 @@
       "delta_pct": -24.89
     },
     {
-      "name": "Income This Week",
-      "value": 0.0,
+      "name": "Income Previous Week",
+      "value": 1084.36,
       "delta_pct": null
     },
     {
       "name": "Income Month to Date",
       "value": 1084.36,
-      "delta_pct": 295.78
+      "delta_pct": null
     },
     {
-      "name": "Total Spend Reduction",
-      "value": 384.21,
-      "delta_pct": -72.99
+      "name": "Previous Weekly Spend",
+      "value": 526.4,
+      "delta_pct": null
     }
   ],
   "top_drivers": [
@@ -74,18 +74,18 @@
   "risks": [],
   "action_items": [
     {
-      "title": "Continue Monitoring Spending",
+      "title": "Continue Monitoring Spending Patterns",
       "impact_usd": 100,
-      "rationale": "To maintain the current spending trend and identify further savings opportunities."
+      "rationale": "To maintain the current spending reduction and identify further savings opportunities."
     },
     {
-      "title": "Evaluate Service Subscriptions",
+      "title": "Evaluate Necessity of Services",
       "impact_usd": 50,
-      "rationale": "To ensure all services are necessary and explore potential cancellations."
+      "rationale": "Assess if all service subscriptions are essential to further reduce costs."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "This week saw a remarkable decrease in spending, dropping by over 70% compared to the previous week. This positive trend is reflected in both weekly and month-to-date spending figures, indicating effective cost control measures.",
-  "email_subject": "Weekly Financial Overview: Spending Down Over 70%",
+  "narrative": "This week saw a remarkable decrease in spending, with a reduction of over $384 compared to the previous week. This trend indicates effective cost management strategies being implemented.",
+  "email_subject": "Weekly Financial Overview: Spending Down Significantly",
   "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
 }
