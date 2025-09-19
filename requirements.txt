@@ -9,8 +9,9 @@ plaid-python==14.0.0
 # OpenAI (v1 SDK)
 openai==1.43.0
 tenacity==8.2.3
-httpx==0.26.0
-httpcore==0.17.3
+openai==1.43.0
+httpx==0.27.2
+httpcore==1.0.5
 
 # Config / IO
 python-dotenv==1.0.1
