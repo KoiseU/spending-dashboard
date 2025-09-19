@@ -10,27 +10,61 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
+      # --- Plaid ---
       PLAID_CLIENT_ID: ${{ secrets.PLAID_CLIENT_ID }}
       PLAID_SECRET: ${{ secrets.PLAID_SECRET }}
       PLAID_ENV: ${{ secrets.PLAID_ENV }}
       PLAID_ACCESS_TOKENS: ${{ secrets.PLAID_ACCESS_TOKENS }}
       OUTPUT_DIR: data/raw
-      # Azure keys optional; AI cells no-op if unset
+
+      # --- Azure (optional for AI features) ---
       AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
       AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
       AZURE_OPENAI_EMBEDDINGS: ${{ secrets.AZURE_OPENAI_EMBEDDINGS }}
       AZURE_OPENAI_API_VERSION: 2024-02-15-preview
 
+      # --- Email (set EMAIL_DRY_RUN="1" to test without sending) ---
+      EMAIL_ENABLED: "1"
+      EMAIL_DRY_RUN: "0"
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: "587"
+      SMTP_SSL_PORT: "465"
+      SMTP_STARTTLS: "1"
+      SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+      EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      EMAIL_CC: ${{ secrets.EMAIL_CC }}
+      EMAIL_BCC: ${{ secrets.EMAIL_BCC }}
+
+      # --- PDF attachment of the Executive Summary (built in Cell 16.8) ---
+      EMAIL_ATTACH_PDF: "1"
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install deps
+      - name: Install wkhtmltopdf (for PDF rendering)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install papermill ipykernel
+          pip install papermill ipykernel matplotlib pdfkit
+
+      - name: Install wkhtmltopdf (Ubuntu)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf
 
       - name: Prepare runtime state
         run: |
@@ -48,11 +82,28 @@ jobs:
 
       - name: Commit outputs if changed
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/latest.csv config/merchants_dim.csv
+
+          # Always add latest.csv
+          git add data/raw/latest.csv
+
+          # Processed/enriched outputs (add if they exist)
+          [ -f data/processed/latest_enriched.csv ] && git add data/processed/latest_enriched.csv || true
+          [ -f data/processed/digest_latest.txt ] && git add data/processed/digest_latest.txt || true
+          [ -f data/processed/goal_nudges_latest.txt ] && git add data/processed/goal_nudges_latest.txt || true
+
+          # Insights (JSON/MD/CSV/PNG/PDF)
+          if ls data/processed/insights/* 1> /dev/null 2>&1; then
+            git add data/processed/insights/*
+          fi
+
+          # merchants_dim.csv if it exists
+          [ -f config/merchants_dim.csv ] && git add config/merchants_dim.csv || true
+
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update latest.csv & merchants_dim [skip ci]"
+            git commit -m "Auto-update raw, processed & insights [skip ci]"
             git push
           else
             echo "No changes to commit."
