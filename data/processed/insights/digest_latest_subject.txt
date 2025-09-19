@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Weekly Financial Summary: Major Spending Reduction Achieved
-=======
-Weekly Financial Overview: Major Spending Reduction Achieved
->>>>>>> c3aef78 (u)
+Weekly Financial Overview: Major Spending Decrease

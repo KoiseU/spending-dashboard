@@ -20,22 +20,17 @@
     "income_mtd_current": 1084.36,
     "income_mtd_previous": 275.0
   },
-  "headline": "Significant Spending Reduction in September",
+  "headline": "September Spending Shows Significant Improvement",
   "key_metrics": [
     {
-      "name": "Total Spend (MTD)",
+      "name": "Total Spend MTD",
       "value": 668.59,
       "delta_pct": -24.89
     },
     {
-      "name": "Total Income (MTD)",
+      "name": "Total Income MTD",
       "value": 1084.36,
       "delta_pct": null
-    },
-    {
-      "name": "Spending Reduction",
-      "value": 221.56,
-      "delta_pct": -24.89
     }
   ],
   "top_drivers": [
@@ -63,22 +58,22 @@
   "risks": [
     {
       "type": "anomaly",
-      "note": "One anomaly detected in spending patterns this month."
+      "note": "One anomaly detected in spending patterns."
     }
   ],
   "action_items": [
     {
       "title": "Review Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "Further analysis of shopping habits could yield additional savings."
+      "rationale": "Identifying non-essential purchases could lead to further savings."
     },
     {
       "title": "Monitor Transportation Costs",
-      "impact_usd": 30,
-      "rationale": "Identifying alternative transport options may reduce expenses."
+      "impact_usd": 20,
+      "rationale": "Optimizing transportation can contribute to overall spending reduction."
     }
   ],
-  "theme": "Cost Efficiency",
-  "narrative": "In September, we have observed a substantial decrease in spending compared to August, with a reduction of approximately 24.9%. This positive trend is driven by lower expenditures across various categories, indicating effective cost management strategies.",
-  "email_subject": "September Financial Overview: Spending Down, Income Up"
+  "theme": "Cost Management",
+  "narrative": "In September, spending has decreased significantly compared to August, with a reduction of approximately 22.5%. This positive trend is supported by a substantial increase in income, indicating improved financial health.",
+  "email_subject": "September Financial Overview: Positive Trends and Actionable Insights"
 }
