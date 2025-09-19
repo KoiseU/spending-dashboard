@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Weekly Financial Summary: Major Spending Reduction Achieved | September Financial Overview: Spending Down, Income Up
+=======
+Weekly Financial Overview: Major Spending Reduction Achieved | September Financial Overview: Improved Spending and Income
+>>>>>>> c3aef78 (u)

@@ -24,6 +24,7 @@ jobs:
       AZURE_OPENAI_API_VERSION: 2024-02-15-preview
 
       # Email (set EMAIL_DRY_RUN="1" for login-only CI tests)
+      EMAIL_DRY_RUN= "0"
       EMAIL_ENABLED: "1"
       SMTP_HOST: smtp.gmail.com
       SMTP_PORT: "587"

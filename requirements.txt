@@ -1,10 +1,23 @@
-﻿pandas
-plaid-python
-jupyter
-python-dotenv
-requests
-pyyaml
-openai
-tenacity
-numpy
-pyarrow
+﻿# Core data stack
+pandas==2.2.2
+numpy==1.26.4
+pyarrow==16.1.0
+
+# Plaid (v10+ SDK supported; code auto-falls back to legacy if needed)
+plaid-python==14.0.0
+
+# OpenAI (v1 SDK)
+openai==1.43.0
+tenacity==8.2.3
+
+# Config / IO
+python-dotenv==1.0.1
+requests==2.31.0
+PyYAML==6.0.2
+
+# Viz & PDF
+matplotlib==3.8.4
+pdfkit==1.0.0
+
+# Notebooks
+jupyter==1.0.0
