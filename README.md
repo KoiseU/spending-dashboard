@@ -527,6 +527,6 @@ Deeper “red flags” explainers on anomalies/subscriptions.
 📄 License
 
 
+MIT © 2025 Kosisonna Francis Ugochukwu. See LICENSE for details.
 
-MIT — see LICENSE.
 
