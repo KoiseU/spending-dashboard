@@ -65,15 +65,15 @@
     {
       "title": "Continue Monitoring Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "To maintain the spending reduction trend and identify further savings opportunities."
+      "rationale": "To maintain the reduced spending trend and ensure essential purchases only."
     },
     {
       "title": "Evaluate Transportation Costs",
       "impact_usd": 20,
-      "rationale": "Assessing transportation expenses could yield additional savings."
+      "rationale": "To identify potential savings in commuting and travel."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the increase in income during the same timeframe. The focus on essential spending categories has contributed to this positive trend.",
+  "narrative": "In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the substantial increase in income during the same timeframe. The focus on essential spending categories has contributed to this positive trend.",
   "email_subject": "September Financial Overview: Spending Reduction Achieved"
 }

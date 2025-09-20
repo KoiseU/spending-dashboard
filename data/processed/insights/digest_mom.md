@@ -1,7 +1,7 @@
 # Monthly Executive Summary (September MTD)
 *Cost Management*
 
-In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the increase in income during the same timeframe. The focus on essential spending categories has contributed to this positive trend.
+In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the substantial increase in income during the same timeframe. The focus on essential spending categories has contributed to this positive trend.
 
 ## Key Metrics (MoM)
 - **Total Spend MTD:** $668.59 (-24.9%)
@@ -18,5 +18,5 @@ In September, we have successfully reduced our spending by approximately 24.9% c
 - **anomaly:** One anomaly detected in spending patterns this month.
 
 ## Recommendations
-- **Continue Monitoring Shopping Expenses** — est. $50. To maintain the spending reduction trend and identify further savings opportunities.
-- **Evaluate Transportation Costs** — est. $20. Assessing transportation expenses could yield additional savings.
+- **Continue Monitoring Shopping Expenses** — est. $50. To maintain the reduced spending trend and ensure essential purchases only.
+- **Evaluate Transportation Costs** — est. $20. To identify potential savings in commuting and travel.
