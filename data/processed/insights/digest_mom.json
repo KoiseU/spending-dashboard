@@ -20,7 +20,7 @@
     "income_mtd_current": 1084.36,
     "income_mtd_previous": 275.0
   },
-  "headline": "Significant Spending Reduction in September",
+  "headline": "Significant Reduction in Spending This Month",
   "key_metrics": [
     {
       "name": "Total Spend MTD",
@@ -30,6 +30,21 @@
     {
       "name": "Total Income MTD",
       "value": 1084.36,
+      "delta_pct": null
+    },
+    {
+      "name": "Spending Reduction",
+      "value": 221.56,
+      "delta_pct": -24.89
+    },
+    {
+      "name": "Subscriptions Count",
+      "value": 0,
+      "delta_pct": null
+    },
+    {
+      "name": "Anomalies Count",
+      "value": 1,
       "delta_pct": null
     }
   ],
@@ -65,15 +80,15 @@
     {
       "title": "Continue Monitoring Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "To maintain the spending reduction trend and identify further savings opportunities."
+      "rationale": "To maintain the downward trend in spending and ensure budget adherence."
     },
     {
       "title": "Evaluate Transportation Costs",
       "impact_usd": 20,
-      "rationale": "Assessing transportation expenses could yield additional savings."
+      "rationale": "To identify potential savings in daily commuting expenses."
     }
   ],
-  "theme": "Cost Management",
-  "narrative": "In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the increase in income during the same timeframe. The focus on essential spending categories has contributed to this positive trend.",
-  "email_subject": "September Financial Overview: Spending Reduction Achieved"
+  "theme": "Cost Efficiency",
+  "narrative": "In September, we have observed a notable decrease in spending compared to August, with a reduction of approximately 22.5%. This improvement is primarily driven by lower expenditures in shopping and services, indicating a positive trend towards more mindful spending habits.",
+  "email_subject": "September Financial Overview: Spending Down, Income Up"
 }

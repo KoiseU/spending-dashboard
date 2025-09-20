@@ -38,18 +38,18 @@
       "delta_pct": -24.89
     },
     {
-      "name": "Income Previous Week",
-      "value": 1084.36,
+      "name": "Weekly Income",
+      "value": 0.0,
       "delta_pct": null
     },
     {
-      "name": "Income Month to Date",
+      "name": "Monthly Income to Date",
       "value": 1084.36,
-      "delta_pct": null
+      "delta_pct": 295.78
     },
     {
-      "name": "Previous Weekly Spend",
-      "value": 526.4,
+      "name": "Subscriptions Count",
+      "value": 0,
       "delta_pct": null
     }
   ],
@@ -74,18 +74,18 @@
   "risks": [],
   "action_items": [
     {
-      "title": "Continue Monitoring Spending Patterns",
-      "impact_usd": 50,
-      "rationale": "To maintain the positive trend in spending reduction."
+      "title": "Continue Monitoring Spending",
+      "impact_usd": 100,
+      "rationale": "To maintain the current trend of reduced spending and identify further savings opportunities."
     },
     {
-      "title": "Evaluate Necessity of Current Services",
-      "impact_usd": 30,
-      "rationale": "Potential for further savings by assessing ongoing service subscriptions."
+      "title": "Evaluate Service Subscriptions",
+      "impact_usd": 50,
+      "rationale": "To ensure no unnecessary services are being paid for, given the current subscription count is zero."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "This week saw a remarkable decrease in spending, dropping by over 70% compared to the previous week. This positive trend reflects effective cost management strategies being implemented.",
-  "email_subject": "Weekly Financial Overview: Spending Down Over 70%",
+  "narrative": "This week saw a remarkable decrease in spending, dropping from $526.40 to $142.19, reflecting a strategic focus on cost control. The month-to-date spending also shows improvement, indicating a positive trend in financial management.",
+  "email_subject": "Weekly Financial Overview: Spending Down Significantly",
   "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
 }
