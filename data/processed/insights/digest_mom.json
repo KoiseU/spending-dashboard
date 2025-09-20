@@ -20,7 +20,7 @@
     "income_mtd_current": 1084.36,
     "income_mtd_previous": 275.0
   },
-  "headline": "Significant Reduction in Spending This Month",
+  "headline": "Significant Spending Reduction in September",
   "key_metrics": [
     {
       "name": "Total Spend MTD",
@@ -65,15 +65,15 @@
     {
       "title": "Continue Monitoring Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "To maintain the current spending reduction trend."
+      "rationale": "To maintain the spending reduction trend and identify further savings opportunities."
     },
     {
-      "title": "Evaluate Necessity of Transfers",
+      "title": "Evaluate Transportation Costs",
       "impact_usd": 20,
-      "rationale": "To further optimize monthly expenses."
+      "rationale": "Assessing transportation expenses could yield additional savings."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "In September, we have observed a notable decrease in spending compared to August, with a reduction of approximately 22.5%. This positive trend is primarily driven by lower expenditures in shopping and other categories, while income has seen a substantial increase.",
-  "email_subject": "September Financial Overview: Spending Down, Income Up"
+  "narrative": "In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the increase in income during the same timeframe. The focus on essential spending categories has contributed to this positive trend.",
+  "email_subject": "September Financial Overview: Spending Reduction Achieved"
 }

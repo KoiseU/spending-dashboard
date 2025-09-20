@@ -1,4 +1,4 @@
 Period: last 30 days vs prior 30
-Spend: $5,434.87 (+1,554.56 vs prior)
+Spend: $5,371.87 (+1,945.82 vs prior)
 Top 3 merchants: WITHDRAWAL ALLY / TYPE ALLY PAYMT ID CO ALLY NAME KOSISONNA UGOCHUKW ECC WEB TRACE ($1,494.22), PETAL ($1,451.92), WITHDRAWAL EPAYMENT / TYPE PMT ID DATA ER AM CO EPAYMENT NAME KOSISONNA UGOCHUKWU ECC WEB TRACE ($777.78)
-Biggest category driver: Debt Payments ($3,863.57)
+Biggest category driver: Debt Payments ($3,800.57)
