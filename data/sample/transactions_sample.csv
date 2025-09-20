@@ -1,0 +1,13 @@
+﻿date,name,merchant_name,category,amount,payment_channel,pending,account_id,transaction_id,bank_name,card_name,merchant_key
+2025-08-29,Coffee purchase,Bean & Bloom,Coffee Shops,4.95,online,False,acc_demo_1,txn_demo_0001,Discover,Discover It,bean_and_bloom
+2025-08-30,Grocery,GreenLeaf Market,Groceries,36.42,in store,False,acc_demo_1,txn_demo_0002,Discover,Discover It,greenleaf_market
+2025-08-31,Online order,Shopora Retail,Shopping,18.99,online,False,acc_demo_1,txn_demo_0003,Discover,Discover It,shopora_retail
+2025-09-01,Gas,QuickFuel Station,Gas,52.37,in store,False,acc_demo_1,txn_demo_0004,Discover,Discover It,quickfuel_station
+2025-09-02,Streaming,Streamio Plus,Subscriptions,12.99,online,False,acc_demo_1,txn_demo_0005,Discover,Discover It,streamio_plus
+2025-09-03,Lunch,Taco Llama,Restaurants,11.58,in store,False,acc_demo_2,txn_demo_0006,Petal,Petal 2,taco_llama
+2025-09-04,Pharmacy,WellCare Pharmacy,Pharmacy,7.89,in store,False,acc_demo_2,txn_demo_0007,Petal,Petal 2,wellcare_pharmacy
+2025-09-05,Home goods,Nest & Nook,Home,24.11,online,False,acc_demo_2,txn_demo_0008,Petal,Petal 2,nest_and_nook
+2025-09-06,Refund - Home goods,Nest & Nook,Home,-24.11,online,False,acc_demo_2,txn_demo_0009,Petal,Petal 2,nest_and_nook
+2025-09-07,Transit,City Transit Pass,Transit,9.00,online,False,acc_demo_0010,Petal,Petal 2,city_transit_pass
+2025-09-08,Dining,Umami Corner,Restaurants,21.44,in store,False,acc_demo_1,txn_demo_0011,Discover,Discover It,umami_corner
+2025-09-09,Tools,Handy Home,Home Improvement,15.76,in store,False,acc_demo_1,txn_demo_0012,Discover,Discover It,handy_home

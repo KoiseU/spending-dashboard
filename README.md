@@ -530,3 +530,22 @@ Deeper “red flags” explainers on anomalies/subscriptions.
 MIT © 2025 Kosisonna Francis Ugochukwu. See LICENSE for details.
 
 
+## Quickstart (Sample Data, No Secrets)
+
+This repo ships a tiny fake dataset so you can run the notebooks without Plaid or emails.
+
+**Setup**
+1. Python 3.10+ recommended.
+2. pip install -r requirements.txt
+3. (No .env needed for sample mode; emails/PDF are off by default in this walkthrough.)
+
+**Run**
+- Open scripts/enrich_transactions.ipynb and run all cells.
+  - Input: data/sample/transactions_sample.csv
+  - Output (examples): weekly/monthly summaries and example charts in data/processed/ *(gitignored)*
+
+**What you�ll see**
+- Categories enriched via simple rules (sample config/sample/merchants_dim.sample.csv).
+- Example summaries suitable for an exec email or dashboard.
+
+> To run end-to-end with Plaid + Azure OpenAI and optional email/PDF, see the **Full Pipeline** section (Step 6).
