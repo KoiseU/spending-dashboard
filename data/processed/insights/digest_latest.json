@@ -38,18 +38,18 @@
       "delta_pct": -24.89
     },
     {
-      "name": "Weekly Income",
+      "name": "Income Last Week",
       "value": 0.0,
       "delta_pct": null
     },
     {
-      "name": "Monthly Income to Date",
+      "name": "Income Month to Date",
       "value": 1084.36,
-      "delta_pct": 295.78
+      "delta_pct": null
     },
     {
-      "name": "Subscriptions Count",
-      "value": 0,
+      "name": "Previous Weekly Spend",
+      "value": 526.4,
       "delta_pct": null
     }
   ],
@@ -75,17 +75,17 @@
   "action_items": [
     {
       "title": "Continue Monitoring Spending",
-      "impact_usd": 100,
-      "rationale": "To maintain the current trend of reduced spending and identify further savings opportunities."
+      "impact_usd": 50,
+      "rationale": "To maintain the current spending reduction trend and identify further savings opportunities."
     },
     {
       "title": "Evaluate Service Subscriptions",
-      "impact_usd": 50,
-      "rationale": "To ensure no unnecessary services are being paid for, given the current subscription count is zero."
+      "impact_usd": 30,
+      "rationale": "To ensure all services are necessary and potentially eliminate unused subscriptions."
     }
   ],
   "theme": "Cost Management",
-  "narrative": "This week saw a remarkable decrease in spending, dropping from $526.40 to $142.19, reflecting a strategic focus on cost control. The month-to-date spending also shows improvement, indicating a positive trend in financial management.",
+  "narrative": "In the last completed week, spending decreased dramatically compared to the previous week, indicating effective cost management strategies. This trend is also reflected in the month-to-date spending figures, showcasing a continued effort to reduce expenses.",
   "email_subject": "Weekly Financial Overview: Spending Down Significantly",
   "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
 }

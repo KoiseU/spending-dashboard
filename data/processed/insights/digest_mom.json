@@ -20,7 +20,7 @@
     "income_mtd_current": 1084.36,
     "income_mtd_previous": 275.0
   },
-  "headline": "Significant Reduction in Spending This Month",
+  "headline": "Significant Spending Reduction in September",
   "key_metrics": [
     {
       "name": "Total Spend MTD",
@@ -30,21 +30,6 @@
     {
       "name": "Total Income MTD",
       "value": 1084.36,
-      "delta_pct": null
-    },
-    {
-      "name": "Spending Reduction",
-      "value": 221.56,
-      "delta_pct": -24.89
-    },
-    {
-      "name": "Subscriptions Count",
-      "value": 0,
-      "delta_pct": null
-    },
-    {
-      "name": "Anomalies Count",
-      "value": 1,
       "delta_pct": null
     }
   ],
@@ -78,17 +63,17 @@
   ],
   "action_items": [
     {
-      "title": "Continue Monitoring Shopping Expenses",
+      "title": "Review Shopping Expenses",
       "impact_usd": 50,
-      "rationale": "To maintain the downward trend in spending and ensure budget adherence."
+      "rationale": "Further analysis of shopping expenses could identify additional savings opportunities."
     },
     {
-      "title": "Evaluate Transportation Costs",
+      "title": "Monitor Transportation Costs",
       "impact_usd": 20,
-      "rationale": "To identify potential savings in daily commuting expenses."
+      "rationale": "Transportation expenses are significant; optimizing routes or using public transport could reduce costs."
     }
   ],
   "theme": "Cost Efficiency",
-  "narrative": "In September, we have observed a notable decrease in spending compared to August, with a reduction of approximately 22.5%. This improvement is primarily driven by lower expenditures in shopping and services, indicating a positive trend towards more mindful spending habits.",
-  "email_subject": "September Financial Overview: Spending Down, Income Up"
+  "narrative": "In September, we have successfully reduced our spending by approximately 24.9% compared to the same period in August. This is a notable achievement, especially considering the increase in income during the same timeframe. Our focus on cost management is yielding positive results.",
+  "email_subject": "September Financial Overview: Spending Down, Income Up!"
 }
