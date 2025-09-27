@@ -38,3 +38,9 @@ scripts/.state/
 scripts/data/
 
 path/to/leaked_file
+
+# Secret scan reports
+gitleaks_*.sarif
+trufflehog_*.json
+# Any .env anywhere
+**/.env
