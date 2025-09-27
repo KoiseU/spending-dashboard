@@ -1,0 +1,12 @@
+﻿title = "Spending Dashboard gitleaks config"
+
+[allowlist]
+  description = "Allow local env and sample/example paths only (placeholders or local use)"
+  files = [
+    "(?i)^\\.env$",               # root .env only
+    "(?i)^data/sample/.*",
+    "(?i)^config/sample/.*",
+    "(?i)^docs/.*",
+    "(?i)^gitleaks_.*\\.sarif$",
+    "(?i)^trufflehog_.*\\.json$"
+  ]
