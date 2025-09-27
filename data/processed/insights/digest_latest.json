@@ -2,90 +2,72 @@
   "insights_version": 3,
   "window": {
     "current": {
-      "start": "2025-09-08",
-      "end": "2025-09-14",
+      "start": "2025-09-15",
+      "end": "2025-09-21",
       "label": "Last completed week (Mon–Sun)"
     },
     "previous": {
-      "start": "2025-09-01",
-      "end": "2025-09-07"
+      "start": "2025-09-08",
+      "end": "2025-09-14"
     }
   },
   "totals": {
-    "spend_current": 142.19,
-    "spend_previous": 526.4,
-    "spend_delta": -384.21,
-    "spend_delta_pct": -0.7299,
-    "income_current": 0.0,
-    "income_previous": 1084.36,
-    "spend_mtd_current": 668.59,
-    "spend_mtd_previous": 890.15,
-    "spend_mtd_delta": -221.56,
-    "spend_mtd_delta_pct": -0.2489,
-    "income_mtd_current": 1084.36,
-    "income_mtd_previous": 275.0
+    "spend_current": 747.51,
+    "spend_previous": 142.19,
+    "spend_delta": 605.32,
+    "spend_delta_pct": 4.2571,
+    "income_current": 722.65,
+    "income_previous": 0.0,
+    "spend_mtd_current": 1416.1,
+    "spend_mtd_previous": 1526.39,
+    "spend_mtd_delta": -110.29,
+    "spend_mtd_delta_pct": -0.0723,
+    "income_mtd_current": 1807.01,
+    "income_mtd_previous": 1326.11
   },
-  "headline": "Significant Reduction in Weekly Spending",
+  "headline": "Significant Increase in Weekly Spending",
   "key_metrics": [
     {
       "name": "Weekly Spend",
-      "value": 142.19,
-      "delta_pct": -72.99
+      "value": 747.51,
+      "delta_pct": 4.2571
     },
     {
-      "name": "Monthly Spend to Date",
-      "value": 668.59,
-      "delta_pct": -24.89
+      "name": "Monthly Spend (Current)",
+      "value": 1416.1,
+      "delta_pct": -7.23
     },
     {
-      "name": "Income Last Week",
-      "value": 0.0,
-      "delta_pct": null
-    },
-    {
-      "name": "Income Month to Date",
-      "value": 1084.36,
-      "delta_pct": null
-    },
-    {
-      "name": "Previous Weekly Spend",
-      "value": 526.4,
+      "name": "Monthly Income (Current)",
+      "value": 1807.01,
       "delta_pct": null
     }
   ],
   "top_drivers": [
     {
-      "label": "Transfers",
-      "spend": 65.74
-    },
-    {
       "label": "Services",
-      "spend": 60.0
+      "spend": 730.82
     },
     {
       "label": "Shopping",
-      "spend": 11.06
-    },
-    {
-      "label": "Home Improvement",
-      "spend": 5.39
+      "spend": 16.69
     }
   ],
   "risks": [],
   "action_items": [
     {
-      "title": "Continue Monitoring Spending",
-      "impact_usd": 50,
-      "rationale": "To maintain the current spending reduction trend and identify further savings opportunities."
+      "title": "Review Service Expenses",
+      "impact_usd": 100,
+      "rationale": "To identify areas for potential savings in the high service spending category."
     },
     {
-      "title": "Evaluate Service Subscriptions",
-      "impact_usd": 30,
-      "rationale": "To ensure all services are necessary and potentially eliminate unused subscriptions."
+      "title": "Monitor Shopping Trends",
+      "impact_usd": 20,
+      "rationale": "To ensure shopping expenses remain controlled and do not escalate further."
     }
   ],
-  "theme": "Cost Management",
-  "narrative": "In the last completed week, spending decreased dramatically compared to the previous week, indicating effective cost management strategies. This trend is also reflected in the month-to-date spending figures, showcasing a continued effort to reduce expenses.",
-  "email_subject": "Weekly Financial Overview: Spending Down Significantly",
-  "summary": "9/8 - 9/14: Weekly spend $142 (WoW -73.0%). Top driver: Transfers ($66)."
+  "theme": "Spending Analysis",
+  "narrative": "This week saw a notable increase in spending compared to the previous week, with a total spend of $747.51, up from $142.19. However, month-to-date spending has improved, showing a decrease from last month.",
+  "email_subject": "Weekly Spending Insights and Action Items",
+  "summary": "9/15 - 9/21: Weekly spend $748 (WoW +4.3%). Top driver: Services ($731)."
 }

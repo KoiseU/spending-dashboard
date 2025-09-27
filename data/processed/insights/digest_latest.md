@@ -1,21 +1,17 @@
-# Weekly Executive Summary (9/8 - 9/14)
-*Cost Management*
+# Weekly Executive Summary (9/15 - 9/21)
+*Spending Analysis*
 
-In the last completed week, spending decreased dramatically compared to the previous week, indicating effective cost management strategies. This trend is also reflected in the month-to-date spending figures, showcasing a continued effort to reduce expenses.
+This week saw a notable increase in spending compared to the previous week, with a total spend of $747.51, up from $142.19. However, month-to-date spending has improved, showing a decrease from last month.
 
 ## Key Metrics
-- **Weekly Spend:** $142.19 (-73.0%)
-- **Monthly Spend to Date:** $668.59 (-24.9%)
-- **Income Last Week:** $0.00
-- **Income Month to Date:** $1,084.36
-- **Previous Weekly Spend:** $526.40
+- **Weekly Spend:** $747.51 (+4.3%)
+- **Monthly Spend (Current):** $1,416.10 (-7.2%)
+- **Monthly Income (Current):** $1,807.01
 
 ## Drivers
-- **Transfers:** $66
-- **Services:** $60
-- **Shopping:** $11
-- **Home Improvement:** $5
+- **Services:** $731
+- **Shopping:** $17
 
 ## Recommendations
-- **Continue Monitoring Spending** — est. $50. To maintain the current spending reduction trend and identify further savings opportunities.
-- **Evaluate Service Subscriptions** — est. $30. To ensure all services are necessary and potentially eliminate unused subscriptions.
+- **Review Service Expenses** — est. $100. To identify areas for potential savings in the high service spending category.
+- **Monitor Shopping Trends** — est. $20. To ensure shopping expenses remain controlled and do not escalate further.
