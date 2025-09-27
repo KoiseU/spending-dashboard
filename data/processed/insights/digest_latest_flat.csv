@@ -1,7 +1,0 @@
-row_type,as_of_end,cur_start,cur_end,prev_start,prev_end,headline,summary,name,value,delta_pct,label,spend,note,impact_usd
-header,2025-09-21,2025-09-15,2025-09-21,2025-09-08,2025-09-14,Significant Increase in Weekly Spending,9/15 - 9/21: Weekly spend $748 (WoW +4.3%). Top driver: Services ($731).,Total Spend (WoW),747.51,4.2571,,,,
-metric,2025-09-21,2025-09-15,2025-09-21,2025-09-08,2025-09-14,Significant Increase in Weekly Spending,,Weekly Spend,747.51,4.2571,,,,
-metric,2025-09-21,2025-09-15,2025-09-21,2025-09-08,2025-09-14,Significant Increase in Weekly Spending,,Monthly Spend (Current),1416.1,-7.23,,,,
-metric,2025-09-21,2025-09-15,2025-09-21,2025-09-08,2025-09-14,Significant Increase in Weekly Spending,,Monthly Income (Current),1807.01,,,,,
-driver,2025-09-21,2025-09-15,2025-09-21,2025-09-08,2025-09-14,Significant Increase in Weekly Spending,,,,,Services,730.82,,
-driver,2025-09-21,2025-09-15,2025-09-21,2025-09-08,2025-09-14,Significant Increase in Weekly Spending,,,,,Shopping,16.69,,
