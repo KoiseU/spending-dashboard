@@ -1,0 +1,79 @@
+{
+  "insights_version": 3,
+  "window": {
+    "current": {
+      "start": "2025-09-01",
+      "end": "2025-09-21",
+      "label": "September MTD"
+    },
+    "previous": {
+      "start": "2025-08-01",
+      "end": "2025-08-21",
+      "label": "August MTD (aligned)"
+    }
+  },
+  "totals": {
+    "spend_mtd_current": 1124.93,
+    "spend_mtd_previous": 1526.39,
+    "spend_mtd_delta": -401.46,
+    "spend_mtd_delta_pct": -0.263,
+    "income_mtd_current": 1807.01,
+    "income_mtd_previous": 1326.11
+  },
+  "headline": "September Financial Overview: Significant Spending Reduction",
+  "key_metrics": [
+    {
+      "name": "Total Spend MTD",
+      "value": 1124.93,
+      "delta_pct": -26.3
+    },
+    {
+      "name": "Total Income MTD",
+      "value": 1807.01,
+      "delta_pct": null
+    }
+  ],
+  "top_drivers": [
+    {
+      "label": "Services",
+      "spend": 499.65
+    },
+    {
+      "label": "Shopping",
+      "spend": 481.55
+    },
+    {
+      "label": "Transfers",
+      "spend": 79.48
+    },
+    {
+      "label": "Transportation",
+      "spend": 58.86
+    },
+    {
+      "label": "Home Improvement",
+      "spend": 5.39
+    }
+  ],
+  "risks": [
+    {
+      "type": "anomaly",
+      "note": "One anomaly detected in spending patterns this month."
+    }
+  ],
+  "action_items": [
+    {
+      "title": "Continue Monitoring Spending",
+      "impact_usd": 100,
+      "rationale": "Maintaining awareness of spending habits can help sustain the current reduction."
+    },
+    {
+      "title": "Evaluate Subscription Services",
+      "impact_usd": 50,
+      "rationale": "With no subscriptions currently, consider evaluating any potential future subscriptions to avoid unnecessary expenses."
+    }
+  ],
+  "theme": "Cost Efficiency",
+  "narrative": "In September, we observed a notable decrease in spending compared to August, with a reduction of over $400. This positive trend reflects effective budgeting and prioritization of essential expenses. Income has also increased, contributing to a healthier financial position.",
+  "email_subject": "September Financial Digest: Spending Down, Income Up!"
+}

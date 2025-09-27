@@ -1,0 +1,83 @@
+{
+  "insights_version": 3,
+  "window": {
+    "current": {
+      "start": "2025-09-15",
+      "end": "2025-09-21",
+      "label": "Last completed week (Mon–Sun)"
+    },
+    "previous": {
+      "start": "2025-09-08",
+      "end": "2025-09-14"
+    }
+  },
+  "totals": {
+    "spend_current": 456.34,
+    "spend_previous": 142.19,
+    "spend_delta": 314.15,
+    "spend_delta_pct": 2.2094,
+    "income_current": 722.65,
+    "income_previous": 0.0,
+    "spend_mtd_current": 1124.93,
+    "spend_mtd_previous": 1526.39,
+    "spend_mtd_delta": -401.46,
+    "spend_mtd_delta_pct": -0.263,
+    "income_mtd_current": 1807.01,
+    "income_mtd_previous": 1326.11
+  },
+  "headline": "Significant Increase in Weekly Spending with Improved Monthly Trends",
+  "key_metrics": [
+    {
+      "name": "Weekly Spend",
+      "value": 456.34,
+      "delta_pct": 2.2094
+    },
+    {
+      "name": "Monthly Spend (MTD)",
+      "value": 1124.93,
+      "delta_pct": -0.263
+    },
+    {
+      "name": "Weekly Income",
+      "value": 722.65,
+      "delta_pct": null
+    },
+    {
+      "name": "Monthly Income (MTD)",
+      "value": 1807.01,
+      "delta_pct": null
+    },
+    {
+      "name": "Previous Weekly Spend",
+      "value": 142.19,
+      "delta_pct": null
+    }
+  ],
+  "top_drivers": [
+    {
+      "label": "Services",
+      "spend": 439.65
+    },
+    {
+      "label": "Shopping",
+      "spend": 16.69
+    }
+  ],
+  "risks": [],
+  "action_items": [
+    {
+      "title": "Review Service Expenses",
+      "impact_usd": 100,
+      "rationale": "To identify potential savings in the high spending category."
+    },
+    {
+      "title": "Monitor Shopping Trends",
+      "impact_usd": 50,
+      "rationale": "To ensure spending remains within budget."
+    }
+  ],
+  "theme": "Spending Analysis",
+  "narrative": "This week saw a notable increase in spending compared to the previous week, with a total spend of $456.34. However, the month-to-date spending shows a positive trend with a reduction of $401.46 compared to last month, indicating improved financial management.",
+  "email_subject": "Weekly Financial Overview: Spending Insights and Action Items",
+  "summary": "9/15 - 9/21: Weekly spend $456 (WoW +2.2%). Top driver: Services ($440)."
+}
