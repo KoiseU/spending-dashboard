@@ -530,3 +530,105 @@ Deeper “red flags” explainers on anomalies/subscriptions.
 MIT © 2025 Kosisonna Francis Ugochukwu. See LICENSE for details.
 
 
+
+## 🏗️ Production-Grade Architecture
+
+**NEW:** This project has been refactored for production quality with modular, testable, and observable code.
+
+### Modular Python Codebase (`src/` directory)
+
+- **`logger.py`** — Structured logging with sensitive data masking
+- **`monitoring.py`** — Track API calls, LLM costs, processing times
+- **`config.py`** — Robust environment variable handling and validation
+- **`plaid_client.py`** — Production-ready Plaid SDK wrapper with retries
+- **`data_processing.py`** — Merchant normalization, PFC mapping, YAML handling
+- **`error_handling.py`** — Retry decorators, circuit breakers, graceful degradation
+
+### Comprehensive Testing (`tests/` directory)
+
+- Unit tests with pytest
+- Mock Plaid responses
+- Data validation tests
+- Run tests: `pytest tests/ -v`
+
+### Monitoring & Observability
+
+- API call tracking (success rate, latency, failures)
+- LLM token usage and cost estimation (tokens + USD)
+- Processing stage timing
+- Metrics exported to `data/processed/insights/metrics.json` and `metrics.csv`
+
+### Production Documentation
+
+- **[`ARCHITECTURE.md`](./ARCHITECTURE.md)** — System design, data flow diagrams, deployment patterns
+- **[`PRODUCTION_GUIDE.md`](./PRODUCTION_GUIDE.md)** — Comprehensive guide covering:
+  - Security best practices (secrets management, data privacy, input validation)
+  - Failure modes & recovery strategies (Plaid API failures, Azure OpenAI quota issues, email delivery)
+  - Monitoring & alerting thresholds (critical and warning alerts)
+  - Edge cases & known issues (PFC missing, duplicate transactions, PDF generation)
+  - Performance optimization (parallel fetching, batch AI categorization, database backends)
+  - Operational guidelines (deployment checklist, capacity planning, maintenance tasks)
+
+### Using the Refactored Modules
+
+While the notebooks remain functional, you can now use production modules directly:
+
+```python
+from src.config import Config
+from src.plaid_client import PlaidClient
+from src.data_processing import add_merchant_keys, extract_pfc_categories
+from src.monitoring import MetricsCollector
+
+# Initialize
+config = Config()
+metrics = MetricsCollector()
+metrics.start_pipeline()
+
+# Fetch transactions
+plaid = PlaidClient(config, metrics=metrics, cursors_path=config.cursors_path)
+df = plaid.fetch_all_transactions(days_back=config.days_back)
+
+# Process
+df = extract_pfc_categories(df)
+df = add_merchant_keys(df)
+
+# Export metrics
+metrics.end_pipeline()
+metrics.export_json('data/processed/insights/metrics.json')
+metrics.export_csv('data/processed/insights/metrics.csv')
+```
+
+### Running Tests
+
+```bash
+# Install test dependencies
+pip install pytest pytest-cov
+
+# Run all tests
+pytest tests/ -v
+
+# Run with coverage
+pytest tests/ --cov=src --cov-report=html
+
+# Run specific test file
+pytest tests/test_data_processing.py -v
+```
+
+### Monitoring Metrics
+
+Metrics are automatically tracked and exported to:
+- `data/processed/insights/metrics.json` (structured JSON for programmatic access)
+- `data/processed/insights/metrics.csv` (flat CSV for Power BI tiles)
+
+**Tracked Metrics:**
+- **API Calls:** Total count, success/failure rates, avg/min/max latency per endpoint
+- **LLM Usage:** Tokens consumed (prompt + completion), estimated cost in USD by model
+- **Processing:** Stage durations, rows processed, errors encountered
+- **Errors:** Last 10 error messages per failed endpoint
+
+Import `metrics.csv` into Power BI to build operational dashboards showing:
+- Pipeline health (API success rates over time)
+- Cost trends (daily LLM spending)
+- Performance metrics (processing duration trends)
+- Alert conditions (failures exceeding thresholds)
+
